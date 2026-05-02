@@ -220,9 +220,9 @@ graph TB
     Q --> Java["Java/C#/Go/JS<br/><b>O runtime</b>.<br/>Pague o GC."]
     Q --> Rust["Rust<br/><b>O compilador sabe</b>.<br/>Sem runtime, sem bug."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 C diz: "você é dono, faça o que quiser, free quando quiser, e que Deus tenha piedade da sua alma".
@@ -360,10 +360,10 @@ graph TB
     M -.escolha 2.-> C
     C -.escolha 2.-> P
 
-    style P fill:#fff9c4,stroke:#f57f17
-    style M fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#bbdefb,stroke:#0d47a1
-    style Tri fill:#ffe0b2,stroke:#e65100
+    style P fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style M fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tri fill:#ffe0b2,stroke:#e65100,color:#1a1a1a
 ```
 
 A pergunta deste capítulo é simples: **por que isso era um trilema, e como Rust o destrói?**
@@ -571,9 +571,9 @@ graph LR
     D --> E[Bug em compile time]
     E --> F[Bug não pode existir]
 
-    style A fill:#ffcdd2
-    style E fill:#c8e6c9
-    style F fill:#a5d6a7
+    style A fill:#ffcdd2,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#a5d6a7,color:#1a1a1a
 ```
 
 C, Go, Python, JavaScript: a maior parte dos bugs vive entre A e D. Java e TypeScript empurraram um pedaço para E (null safety em TS, type errors em ambos). Rust empurra **classes inteiras** de bug — toda a família de UB de memória, toda a família de data races — para F.
@@ -658,9 +658,9 @@ graph TB
     WM2 --> R2["Segurança<br/>GC pause, footprint"]
     WM3 --> R3["Performance + segurança<br/>Curva mental"]
 
-    style WM1 fill:#ffcdd2,stroke:#b71c1c
-    style WM2 fill:#fff9c4,stroke:#f57f17
-    style WM3 fill:#c8e6c9,stroke:#1b5e20
+    style WM1 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style WM2 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style WM3 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ### World Model 1 — Você Gerencia (C, C++ raw, Assembly)
@@ -933,10 +933,10 @@ graph TB
     V --> Mv["Pode ser <b>movido</b><br/>(transfere ownership)"]
     V --> Cl["Pode ser <b>clonado</b><br/>(cópia explícita)"]
 
-    style O fill:#c8e6c9
-    style I fill:#bbdefb
-    style M fill:#ffe0b2
-    style S fill:#ffcdd2
+    style O fill:#c8e6c9,color:#1a1a1a
+    style I fill:#bbdefb,color:#1a1a1a
+    style M fill:#ffe0b2,color:#1a1a1a
+    style S fill:#ffcdd2,color:#1a1a1a
 ```
 
 Esse diagrama é o livro inteiro em uma imagem. Tudo que vem a seguir é detalhe.
@@ -1152,11 +1152,11 @@ graph TB
     M -->|Local, escopo limitado| LetMut[let mut nome]
     M -->|Global| Warning["static mut<br/><b>unsafe</b><br/>repense"]
 
-    style Const fill:#c8e6c9,stroke:#1b5e20
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Let fill:#c8e6c9,stroke:#1b5e20
-    style LetMut fill:#fff9c4,stroke:#f57f17
-    style Warning fill:#ffcdd2,stroke:#b71c1c
+    style Const fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Let fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style LetMut fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Warning fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 4.6 Shadowing — A Reencarnação do Nome
@@ -1691,10 +1691,10 @@ graph LR
     Char --> Rust["Rust char<br/>4 bytes<br/>USV (sem surrogates)"]
     Char --> TS["TS string[i]<br/>2 bytes UTF-16<br/>pode ser meio caractere"]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#c8e6c9,stroke:#1b5e20
-    style Rust fill:#c8e6c9,stroke:#1b5e20
-    style TS fill:#fff9c4,stroke:#f57f17
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Há uma sutileza importante: `char` em Rust é **um USV**, não necessariamente um *grapheme cluster* (o que o usuário vê como "uma letra"). O `é` pode ser um único USV (`U+00E9`) ou dois (`e` + acento combinante `U+0301`). Para iterar grapheme clusters, use o crate `unicode-segmentation`. Para 95% dos casos, `char` é o que você quer.
@@ -1832,9 +1832,9 @@ graph LR
     Array -->|&array[..]| Slice
     Vec -->|&vec[..]| Slice
 
-    style Array fill:#c8e6c9,stroke:#1b5e20
-    style Slice fill:#bbdefb,stroke:#0d47a1
-    style Vec fill:#fff9c4,stroke:#f57f17
+    style Array fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Slice fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Vec fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A maioria das funções de biblioteca aceita `&[T]` (slice) em vez de array fixo ou `Vec`, porque slice é o denominador comum. Você passa qualquer um dos três:
@@ -2393,10 +2393,10 @@ graph TB
 
     Expr --> ExprSafety[Garantias:<br/>- Sempre inicializada<br/>- Tipo único<br/>- Exaustividade verificada]
 
-    style Stmt fill:#ffcdd2,stroke:#b71c1c
-    style StmtBugs fill:#ffcdd2,stroke:#b71c1c
-    style Expr fill:#c8e6c9,stroke:#1b5e20
-    style ExprSafety fill:#c8e6c9,stroke:#1b5e20
+    style Stmt fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style StmtBugs fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Expr fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ExprSafety fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A diferença de paradigma se traduz em diferença de superfície de bugs.
@@ -2597,9 +2597,9 @@ graph TB
     S1 -->|aponta para byte 0| H1
     S2 -->|aponta para byte 1| H1
 
-    style S1 fill:#fff9c4,stroke:#f57f17
-    style S2 fill:#bbdefb,stroke:#0d47a1
-    style H1 fill:#c8e6c9,stroke:#1b5e20
+    style S1 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style S2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style H1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `String` é uma estrutura na stack que aponta para bytes na heap. Carrega capacidade extra para crescer sem realocar a cada `push`. Quando o `String` sai de escopo, a memória da heap é liberada (Drop).
@@ -2798,9 +2798,9 @@ graph LR
     Chars --> Use2["use: validação,<br/>busca textual"]
     Graphemes --> Use3["use: cursor de UI,<br/>truncar texto"]
 
-    style Bytes fill:#ffcdd2,stroke:#b71c1c
-    style Chars fill:#fff9c4,stroke:#f57f17
-    style Graphemes fill:#c8e6c9,stroke:#1b5e20
+    style Bytes fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Chars fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Graphemes fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 7.8 Os Outros Tipos: CString, OsString, Path
@@ -2962,10 +2962,10 @@ graph TB
     Q --> Go["Go<br/><b>Conversão explícita</b><br/>int32(x), mas sem<br/>distinção infalível/falível."]
     Q --> Rust["Rust<br/><b>Inferência local +<br/>From / TryFrom</b><br/>Sem coerção. Sem surpresa."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#e1bee7,stroke:#4a148c
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#e1bee7,stroke:#4a148c,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Este capítulo é sobre essa quarta caixa.
@@ -3340,9 +3340,9 @@ flowchart TD
     E --> G[Compilador prova<br/>safety estática]
     F --> G
 
-    style C fill:#c8e6c9,stroke:#1b5e20
-    style D fill:#fff9c4,stroke:#f57f17
-    style G fill:#bbdefb,stroke:#0d47a1
+    style C fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style G fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Esse padrão se repete em:
@@ -3494,8 +3494,8 @@ graph LR
     P --> D1
     L -.-> D3
 
-    style Slice fill:#c8e6c9,stroke:#1b5e20
-    style Heap fill:#bbdefb,stroke:#0d47a1
+    style Slice fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Heap fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 A representação canônica:
@@ -3964,8 +3964,8 @@ graph TB
 
     S3 -- ptr --> H1
 
-    style Stack fill:#e3f2fd,stroke:#0d47a1
-    style Heap fill:#fff3e0,stroke:#e65100
+    style Stack fill:#e3f2fd,stroke:#0d47a1,color:#1a1a1a
+    style Heap fill:#fff3e0,stroke:#e65100,color:#1a1a1a
 ```
 
 A `String` é um **trio na stack** (ponteiro, comprimento, capacidade — 24 bytes em x86_64) que aponta para uma **região no heap** onde os bytes vivem.
@@ -4000,9 +4000,9 @@ graph LR
         D_s2["s2: ptr/6/6"] -->|aponta| D_heap["heap: Felipe"]
     end
 
-    style A_s1 fill:#c8e6c9,stroke:#1b5e20
-    style D_s1 fill:#ffcdd2,stroke:#b71c1c
-    style D_s2 fill:#c8e6c9,stroke:#1b5e20
+    style A_s1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D_s1 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style D_s2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O heap não mudou. Apenas o struct na stack migrou de variável. E o compilador agora se recusa a deixar você usar `s1`.
@@ -4239,10 +4239,10 @@ graph TB
     Bug --> GoHandling["Go / Java / TS<br/>GC resolve em runtime.<br/>Custo: pausa, overhead, sem sistemas."]
     Bug --> RustHandling["Rust<br/>Compilador prova ausência.<br/>Zero overhead. Sem GC."]
 
-    style CHandling fill:#ffcdd2,stroke:#b71c1c
-    style CppHandling fill:#fff9c4,stroke:#f57f17
-    style GoHandling fill:#fff9c4,stroke:#f57f17
-    style RustHandling fill:#c8e6c9,stroke:#1b5e20
+    style CHandling fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style CppHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style GoHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RustHandling fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 10.8 Visualizando um Move
@@ -4269,7 +4269,7 @@ graph LR
     end
     s1A -->|aponta| h
 
-    style s1A fill:#c8e6c9,stroke:#1b5e20
+    style s1A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A `String::from("Felipe")` chamou o alocador, recebeu o endereço `0xA0`, gravou os 6 bytes e construiu um header de 24 bytes na stack apontando para lá.
@@ -4287,8 +4287,8 @@ graph LR
     end
     s2B -->|aponta| h2
 
-    style s1B fill:#ffcdd2,stroke:#b71c1c
-    style s2B fill:#c8e6c9,stroke:#1b5e20
+    style s1B fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style s2B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `s1` ainda existe fisicamente na stack — os bytes do header podem até estar lá, idênticos. Mas, no nível do tipo, o compilador marcou `s1` como `moved`. Qualquer leitura de `s1` agora é erro de compilação. É um conceito puramente *estático*: nada acontece em runtime para "marcar" `s1`. O compilador simplesmente recusa o programa.
@@ -4305,9 +4305,9 @@ graph LR
         empty["0xA0: liberado"]
     end
 
-    style s1C fill:#ffcdd2,stroke:#b71c1c
-    style s2C fill:#ffcdd2,stroke:#b71c1c
-    style empty fill:#eceff1,stroke:#455a64
+    style s1C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style s2C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style empty fill:#eceff1,stroke:#455a64,color:#1a1a1a
 ```
 
 Note: `Drop` foi chamado *uma vez* — sobre `s2`. Nunca duas vezes. A Regra 2 ("um dono por vez") é exatamente o que torna isso seguro.
@@ -4337,8 +4337,8 @@ graph LR
     s1D --> h1d
     s2D --> h2d
 
-    style s1D fill:#c8e6c9,stroke:#1b5e20
-    style s2D fill:#c8e6c9,stroke:#1b5e20
+    style s1D fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style s2D fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `clone()` paga o preço: nova alocação, novo heap, dois donos genuinamente independentes. Cada um será dropped uma vez sobre seu próprio heap. Sem double-free, sem aliasing, sem problema.
@@ -4512,8 +4512,8 @@ graph LR
     nome --> h
     s --> nome
 
-    style nome fill:#c8e6c9,stroke:#1b5e20
-    style s fill:#bbdefb,stroke:#0d47a1
+    style nome fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style s fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Note a diferença em relação a um move: `s` não é uma cópia do header de `nome`. `s` é um ponteiro **para o header de `nome`**. Quando `comprimento` retorna, `s` desaparece, mas `nome` está intacta — não foi tocada.
@@ -4664,8 +4664,8 @@ graph TB
         p2 --> h2_old
     end
 
-    style p2 fill:#ffcdd2,stroke:#b71c1c
-    style h2_old fill:#ffcdd2,stroke:#b71c1c
+    style p2 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style h2_old fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Em C++, este é o bug clássico que `std::vector::push_back` causa. Iteradores guardados antes de `push_back` podem ser invalidados — está documentado, mas é um erro humano comum. Em Rust, o compilador rejeita o programa: você tem um `&` vivo, não pode chamar nada que peça `&mut self` no mesmo `Vec`.
@@ -5039,10 +5039,10 @@ graph TB
     Bug --> TSHandling["TS / Go<br/>Comportamento errado, sem erro.<br/>Detecção: bug report."]
     Bug --> RustHandling["Rust<br/>Erro de compilação.<br/>Detecção: antes do binário."]
 
-    style CHandling fill:#ffcdd2,stroke:#b71c1c
-    style JavaHandling fill:#fff9c4,stroke:#f57f17
-    style TSHandling fill:#fff9c4,stroke:#f57f17
-    style RustHandling fill:#c8e6c9,stroke:#1b5e20
+    style CHandling fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style JavaHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TSHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RustHandling fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 11.12 Por Que `aliasing XOR mutability` é Mais Profundo do Que Parece
@@ -5158,7 +5158,7 @@ graph TB
     GG6 --> Final
     GG7 --> Final
 
-    style Final fill:#c8e6c9,stroke:#1b5e20
+    style Final fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Sete bugs históricos eliminados:
@@ -5445,9 +5445,9 @@ graph TB
     R3 -->|sim| Out2[Output recebe<br/>lifetime de self]
     R3 -->|não| Erro[Compilador exige<br/>anotação explícita]
 
-    style Out1 fill:#c8e6c9,stroke:#1b5e20
-    style Out2 fill:#c8e6c9,stroke:#1b5e20
-    style Erro fill:#ffcdd2,stroke:#b71c1c
+    style Out1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Out2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Erro fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 **Regra 1.** Cada referência de input ganha seu próprio parâmetro de lifetime distinto:
@@ -5518,10 +5518,10 @@ graph TB
     Q --> Go["Go<br/>Escape analysis +<br/>GC para o que escapa."]
     Q --> Rust["Rust<br/>Compilador prova,<br/>antes do binário existir."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O mesmo bug, em quatro linguagens:
@@ -5702,8 +5702,8 @@ graph LR
 
     antes ==> depois
 
-    style S1B fill:#ffcdd2,stroke:#b71c1c
-    style S2B fill:#c8e6c9,stroke:#1b5e20
+    style S1B fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style S2B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A diferença essencial em relação a C é: **Rust marca `s1` como inválido em compile time**. Tentar usá-lo é erro do compilador, não bug em runtime. Quando `s2` sair de escopo, ele será o único a chamar `drop`. O heap será liberado uma vez. Sem double-free, sem leak.
@@ -5823,11 +5823,11 @@ graph TB
     Q --> Go["Go<br/>Cópia rasa do value.<br/>Pointers compartilham heap.<br/>GC limpa."]
     Q --> Rust["Rust<br/>Move se !Copy.<br/>Copy se Copy.<br/>a invalidado no primeiro caso."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style CPP fill:#fff3e0,stroke:#e65100
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style CPP fill:#fff3e0,stroke:#e65100,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O mesmo código, cinco realidades:
@@ -5940,10 +5940,10 @@ graph TB
     Q3 -->|não| Borrow["Emprestar<br/>let b = &a;"]
     Q3 -->|sim| Clone["Clonar<br/>let b = a.clone();"]
 
-    style Move fill:#c8e6c9,stroke:#1b5e20
-    style Copy fill:#c8e6c9,stroke:#1b5e20
-    style Borrow fill:#bbdefb,stroke:#0d47a1
-    style Clone fill:#fff9c4,stroke:#f57f17
+    style Move fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Copy fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Borrow fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Clone fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Em ordem de preferência decrescente:
@@ -6004,8 +6004,8 @@ graph LR
     Tipos -->|Bons| Compila["Só estados válidos compilam"]
     Tipos -->|Ruins| Runtime["Bugs em runtime"]
 
-    style Compila fill:#c8e6c9,stroke:#1b5e20
-    style Runtime fill:#ffcdd2,stroke:#b71c1c
+    style Compila fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Runtime fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Este capítulo é sobre as três variedades de `struct` em Rust, sobre métodos e funções associadas, e sobre o padrão que talvez seja a coisa mais subestimada da linguagem: o **newtype**.
@@ -6171,10 +6171,10 @@ graph TB
     Struct --> ImplB
     Struct --> ImplC
 
-    style Struct fill:#fff9c4,stroke:#f57f17
-    style ImplA fill:#c8e6c9,stroke:#1b5e20
-    style ImplB fill:#c8e6c9,stroke:#1b5e20
-    style ImplC fill:#c8e6c9,stroke:#1b5e20
+    style Struct fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style ImplA fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ImplB fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ImplC fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 14.6 Funções Associadas
@@ -6346,8 +6346,8 @@ graph LR
     Domain -->|"sentido"| Código["Código auto-documentado"]
     Domain -->|"tipo nominal"| Compilador["Compilador refuta confusões"]
 
-    style Domain fill:#c8e6c9,stroke:#1b5e20
-    style Compilador fill:#c8e6c9,stroke:#1b5e20
+    style Domain fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Compilador fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 14.9 Modelando um Pedido
@@ -6493,8 +6493,8 @@ graph TB
 
     Modelo --> Garantia["Estados ilegais não compilam"]
 
-    style Modelo fill:#fff9c4,stroke:#f57f17
-    style Garantia fill:#c8e6c9,stroke:#1b5e20
+    style Modelo fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Garantia fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A descoberta importante: linguagens com sum types decentes (Rust, Haskell, OCaml, F#, Scala, TypeScript com discriminated unions, Swift) ganham uma ferramenta que linguagens sem (Go, Java até 17, C) não têm. E essa ferramenta é o que permite seguir o conselho de Minsky.
@@ -6993,10 +6993,10 @@ graph LR
     Função -->|"TS strict"| TS["T | null<br/>compilador checa"]
     Função -->|"Rust"| Rust["Option<T><br/>tipo é a checagem"]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#c8e6c9,stroke:#1b5e20
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 16.3 Métodos do Option
@@ -7269,10 +7269,10 @@ graph TB
     Caminho -->|"TS"| TMod["try/catch<br/>tipo do erro: any/unknown<br/>fluxo invisível"]
     Caminho -->|"Rust"| RMod["operador ?<br/>1 caractere por chamada<br/>tipo do erro explícito"]
 
-    style RMod fill:#c8e6c9,stroke:#1b5e20
-    style GMod fill:#fff9c4,stroke:#f57f17
-    style TMod fill:#fff9c4,stroke:#f57f17
-    style CMod fill:#ffcdd2,stroke:#b71c1c
+    style RMod fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style GMod fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TMod fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style CMod fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 16.6 Antes e Depois: Parsing nas Quatro Linguagens
@@ -7510,8 +7510,8 @@ graph TB
     Lib --> Mod2[mod b]
     Mod2 --> Mod2a[mod c]
 
-    style Lib fill:#c8e6c9,stroke:#1b5e20
-    style Bin1 fill:#bbdefb,stroke:#0d47a1
+    style Lib fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Bin1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Compare com Go. Em Go, a unidade equivalente seria o *package*, e a unidade de "tudo junto" é o *module* (Go module, com `go.mod`). Mas Go não distingue lib de bin no nível do package: o package vira binário se tiver `package main` e `func main()`, senão é importável. Funciona, mas é menos explícito.
@@ -8069,8 +8069,8 @@ graph LR
     C --> D["pub(crate)<br/>visível no crate"]
     D --> E["pub<br/>visível externamente<br/>(via path completo)"]
 
-    style A fill:#ffcdd2
-    style E fill:#c8e6c9
+    style A fill:#ffcdd2,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
 ```
 
 Lendo da esquerda para a direita: cada nível afrouxa a privacidade um pouco mais. Comece da esquerda e *só* afrouxe quando precisar.
@@ -8228,8 +8228,8 @@ graph TB
         P1 -.-> P2
     end
 
-    style R1 fill:#ffcdd2
-    style P1 fill:#c8e6c9
+    style R1 fill:#ffcdd2,color:#1a1a1a
+    style P1 fill:#c8e6c9,color:#1a1a1a
 ```
 
 O sistema de módulos de Rust *favorece* módulos profundos:
@@ -8571,8 +8571,8 @@ graph TB
     Q -- Binary / aplicação --> Sim["Sim, commit Cargo.lock<br/>Builds reprodutíveis em CI/prod."]
     Q -- Library --> Nao["Não, ignore Cargo.lock<br/>Deixe consumidores resolver."]
 
-    style Sim fill:#c8e6c9
-    style Nao fill:#fff9c4
+    style Sim fill:#c8e6c9,color:#1a1a1a
+    style Nao fill:#fff9c4,color:#1a1a1a
 ```
 
 A justificativa:
@@ -8705,7 +8705,7 @@ graph TB
     Cargo --> E["Ergonomia<br/>(mensagens, sugestões,<br/>cargo add)"]
     Cargo --> F["Ecossistema<br/>(crates.io + docs.rs<br/>=automático)"]
 
-    style Cargo fill:#c8e6c9,stroke:#1b5e20
+    style Cargo fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 1. **Padrões fortes**. Estrutura de projeto canônica (`src/`, `tests/`, `examples/`, `benches/`). Formatador único. Linter único. Versioning canônico. Você abre qualquer crate em crates.io e a topografia é familiar.
@@ -8824,8 +8824,8 @@ graph LR
     Heap["Heap<br/>[1, 2, 3, _]"]
     Stack -->|aponta| Heap
 
-    style Stack fill:#fff9c4,stroke:#f57f17
-    style Heap fill:#c8e6c9,stroke:#1b5e20
+    style Stack fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Heap fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Em TypeScript:
@@ -9182,12 +9182,12 @@ graph TB
     Set --> BTS["<b>BTreeSet&lt;T&gt;</b><br/>ordenado"]
     Fila --> VD["<b>VecDeque&lt;T&gt;</b><br/>ring buffer"]
 
-    style Vec fill:#c8e6c9,stroke:#1b5e20
-    style HM fill:#c8e6c9,stroke:#1b5e20
-    style BTM fill:#fff9c4,stroke:#f57f17
-    style HS fill:#c8e6c9,stroke:#1b5e20
-    style BTS fill:#fff9c4,stroke:#f57f17
-    style VD fill:#c8e6c9,stroke:#1b5e20
+    style Vec fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style HM fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BTM fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style HS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BTS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style VD fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A heurística é simples e raramente erra:
@@ -9401,8 +9401,8 @@ graph TB
     Match -->|Ok&#40;v&#41;| Unwrap --> Continue
     Match -->|Err&#40;e&#41;| Convert --> Return
 
-    style Continue fill:#c8e6c9,stroke:#1b5e20
-    style Return fill:#ffcdd2,stroke:#b71c1c
+    style Continue fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Return fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 `?` também funciona com `Option`, propagando `None` da mesma forma. Não funciona em funções que retornam `()` — você precisa de uma função que retorna `Result` ou `Option`. `main` pode retornar `Result<(), Box<dyn Error>>` desde Rust 2018, então `?` no `main` é viável:
@@ -9597,10 +9597,10 @@ graph TB
         R3["compilador exige tratamento"]
     end
 
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Quatro propriedades convergem em Rust e em mais nenhuma das três:
@@ -9714,10 +9714,10 @@ graph LR
     Src --> str["id_String(x: String) -&gt; String"]
     Src --> vec["id_Vec_u8(x: Vec&lt;u8&gt;) -&gt; Vec&lt;u8&gt;"]
 
-    style Src fill:#bbdefb,stroke:#0d47a1
-    style i32 fill:#c8e6c9,stroke:#1b5e20
-    style str fill:#c8e6c9,stroke:#1b5e20
-    style vec fill:#c8e6c9,stroke:#1b5e20
+    style Src fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style i32 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style str fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style vec fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O custo é binário maior — cada tipo concreto multiplica o código gerado. O ganho é que o compilador pode otimizar cada especialização individualmente: inline, vetorização, eliminação de branches mortos.
@@ -10285,10 +10285,10 @@ graph LR
     TS    --> Java
     Java  --> Rust
 
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Java fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Java fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Da esquerda pra direita: mais flexível à mais seguro. Go e TS te deixam implementar interfaces sem saber que existem (o compilador deduz). Java te força a declarar. Rust te força a declarar *e* aplica a orphan rule.
@@ -10675,8 +10675,8 @@ graph TB
     Dynamic --> Pros2["Pros: heterogêneo, ABI estável, binário menor"]
     Dynamic --> Cons2["Cons: vtable, sem inline, object-safe only"]
 
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Dynamic fill:#fff9c4,stroke:#f57f17
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Dynamic fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 24.10 Resumo
@@ -11194,9 +11194,9 @@ graph TB
     Static -->|é subtipo de| Long
     Long -->|é subtipo de| Short
 
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Long fill:#fff9c4,stroke:#f57f17
-    style Short fill:#ffcdd2,stroke:#b71c1c
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Long fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Short fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 A direção da seta — *"é subtipo de"* — vai do **mais longo** para o **mais curto**. O compilador faz **coerção implícita** descendo essa hierarquia: ele pode encurtar lifetimes silenciosamente. Nunca alongar.
@@ -12041,9 +12041,9 @@ graph TB
     Share --> Rc["<b>Rc T</b><br/>N donos. Single-thread.<br/>Reference counted."]
     Thread --> Arc["<b>Arc T</b><br/>N donos. Multi-thread.<br/>Atomic refcount."]
 
-    style Box fill:#c8e6c9,stroke:#1b5e20
-    style Rc fill:#fff9c4,stroke:#f57f17
-    style Arc fill:#bbdefb,stroke:#0d47a1
+    style Box fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Arc fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Os três compartilham o mesmo princípio: **eles são donos**. Cada um implementa `Deref` para parecer uma referência e `Drop` para limpar quando ninguém mais precisa. A diferença é a regra de contagem.
@@ -12308,10 +12308,10 @@ graph LR
         R1["Box / Rc / Arc<br/>cada escolha<br/>e' explicita"]
     end
 
-    style C1 fill:#ffcdd2
-    style CPP1 fill:#fff9c4
-    style GC1 fill:#bbdefb
-    style R1 fill:#c8e6c9
+    style C1 fill:#ffcdd2,color:#1a1a1a
+    style CPP1 fill:#fff9c4,color:#1a1a1a
+    style GC1 fill:#bbdefb,color:#1a1a1a
+    style R1 fill:#c8e6c9,color:#1a1a1a
 ```
 
 **C** te dá `malloc`/`free`. Você é responsável por todo. Se você esquecer um `free`, leak. Se você der `free` duas vezes, double-free. Se você der `free` enquanto alguém ainda usa o ponteiro, use-after-free. Cada CVE de buffer overflow no Linux nasceu de um humano falhando essa contabilidade.
@@ -12501,9 +12501,9 @@ graph LR
     Caller -->|"&self"| Cache
     Cache -->|"borrow_mut em runtime"| Inner
 
-    style Caller fill:#bbdefb
-    style Cache fill:#fff9c4
-    style Inner fill:#c8e6c9
+    style Caller fill:#bbdefb,color:#1a1a1a
+    style Cache fill:#fff9c4,color:#1a1a1a
+    style Inner fill:#c8e6c9,color:#1a1a1a
 ```
 
 Por fora, o `Cache` parece imutável. Por dentro, ele muta. O contrato com o usuário não muda. A invariante de aliasing continua sendo respeitada — só que agora é o tipo que se responsabiliza, não o compilador.
@@ -12840,11 +12840,11 @@ graph TB
     Lock -->|"exclusivo"| Mutex["<b>Mutex T</b><br/>lock bloqueante<br/>cap 30"]
     Lock -->|"leitor-escritor"| RwLock["<b>RwLock T</b><br/>multi-leitor / unico-escritor<br/>cap 30"]
 
-    style Cell fill:#c8e6c9
-    style Refcell fill:#fff9c4
-    style Once fill:#bbdefb
-    style Mutex fill:#ffe0b2
-    style RwLock fill:#ffe0b2
+    style Cell fill:#c8e6c9,color:#1a1a1a
+    style Refcell fill:#fff9c4,color:#1a1a1a
+    style Once fill:#bbdefb,color:#1a1a1a
+    style Mutex fill:#ffe0b2,color:#1a1a1a
+    style RwLock fill:#ffe0b2,color:#1a1a1a
 ```
 
 A árvore inteira responde a perguntas:
@@ -13002,10 +13002,10 @@ graph TB
     Q --> TS["TypeScript Workers<br/><b>Sem memoria compartilhada.</b><br/>Sem race, sem paralelismo direto."]
     Q --> Rust["Rust threads<br/><b>Nao compila.</b><br/>Send/Sync recusam."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 30.2 thread::spawn e JoinHandle
@@ -13144,10 +13144,10 @@ graph TB
     All --> SyncOnly[Sync mas nao Send<br/>raro: MutexGuard]
     All --> Neither[Nem Send nem Sync<br/>ex: Rc, *mut T]
 
-    style SendSync fill:#c8e6c9,stroke:#1b5e20
-    style SendOnly fill:#fff9c4,stroke:#f57f17
-    style SyncOnly fill:#fff9c4,stroke:#f57f17
-    style Neither fill:#ffcdd2,stroke:#b71c1c
+    style SendSync fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style SendOnly fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style SyncOnly fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Neither fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 30.5 Por Que Rc Não É Send
@@ -13486,8 +13486,8 @@ graph LR
     SS -->|sim| Compila[Binario seguro]
     SS -->|nao| Erro[Erro nomeado<br/>com tipo culpado]
 
-    style Compila fill:#c8e6c9,stroke:#1b5e20
-    style Erro fill:#ffcdd2,stroke:#b71c1c
+    style Compila fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Erro fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 No próximo capítulo, vamos ao primeiro mecanismo de comunicação que Rust empresta de Go: **channels**.
@@ -13526,7 +13526,7 @@ graph LR
     C[Producer N] -->|send| Ch
     Ch -->|recv| D[Consumer]
 
-    style Ch fill:#c8e6c9,stroke:#1b5e20
+    style Ch fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 31.2 mpsc: Multi-Producer, Single-Consumer
@@ -13950,8 +13950,8 @@ graph LR
     W2 --> Sink
     W3 --> Sink
 
-    style Source fill:#bbdefb,stroke:#0d47a1
-    style Sink fill:#c8e6c9,stroke:#1b5e20
+    style Source fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Sink fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ```rust
@@ -14112,9 +14112,9 @@ graph LR
     Choice -->|threads, producao| Cross
     Choice -->|async/await| Tok
 
-    style Std fill:#fff9c4,stroke:#f57f17
-    style Cross fill:#c8e6c9,stroke:#1b5e20
-    style Tok fill:#bbdefb,stroke:#0d47a1
+    style Std fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Cross fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Tok fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 ---
@@ -14252,7 +14252,7 @@ graph TB
     ArcRole --> Together[Juntos: T mutavel,<br/>compartilhado entre threads]
     MutexRole --> Together
 
-    style Together fill:#c8e6c9,stroke:#1b5e20
+    style Together fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 32.4 Poisoning: O Result em lock()
@@ -14564,10 +14564,10 @@ graph TB
     Q --> Flow{O dado flui<br/>entre threads?}
     Flow -->|sim| Channel[mpsc / crossbeam<br/>cap. 31]
 
-    style Atomic fill:#c8e6c9,stroke:#1b5e20
-    style RwLock fill:#bbdefb,stroke:#0d47a1
-    style Mutex fill:#fff9c4,stroke:#f57f17
-    style Channel fill:#f8bbd0,stroke:#880e4f
+    style Atomic fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RwLock fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Mutex fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Channel fill:#f8bbd0,stroke:#880e4f,color:#1a1a1a
 ```
 
 Heurística:
@@ -14666,9 +14666,9 @@ graph TB
     Q --> Go["Go<br/><b>Goroutines + scheduler</b><br/>Stackful, runtime gerencia<br/>~2KB por goroutine"]
     Q --> Rust["Rust<br/><b>Future + executor externo</b><br/>Stackless, zero-cost<br/>LAZY até polled"]
 
-    style JS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style JS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 JavaScript escolheu o caminho mais simples: **uma thread**, um event loop, callbacks empilhados em filas. A linguagem nasceu no navegador, onde a UI exige uma única thread por construção. Promises são **eager** — quando você escreve `fetch(url)`, a requisição **dispara imediatamente**, mesmo que ninguém faça `.then` nela.
@@ -14838,12 +14838,12 @@ graph LR
         F3 -.- Exec
     end
 
-    style G1 fill:#bbdefb
-    style G2 fill:#bbdefb
-    style G3 fill:#bbdefb
-    style F1 fill:#c8e6c9
-    style F2 fill:#c8e6c9
-    style F3 fill:#c8e6c9
+    style G1 fill:#bbdefb,color:#1a1a1a
+    style G2 fill:#bbdefb,color:#1a1a1a
+    style G3 fill:#bbdefb,color:#1a1a1a
+    style F1 fill:#c8e6c9,color:#1a1a1a
+    style F2 fill:#c8e6c9,color:#1a1a1a
+    style F3 fill:#c8e6c9,color:#1a1a1a
 ```
 
 **Stackful coroutines** (Go, Erlang, fibers C++): cada tarefa concorrente tem sua própria stack de execução. Quando ela faz uma operação que bloqueia, o runtime salva a stack inteira e troca para outra. É flexível — a tarefa pode chamar funções normais, recursão, qualquer coisa — mas tem custo de memória e de troca de contexto.
@@ -15154,12 +15154,12 @@ graph TB
     Reactor <-.events.- K
     Block <-.syscalls.- K
 
-    style F1 fill:#c8e6c9
-    style F2 fill:#c8e6c9
-    style F3 fill:#c8e6c9
-    style Sch fill:#fff9c4
-    style Reactor fill:#fff9c4
-    style K fill:#ffcdd2
+    style F1 fill:#c8e6c9,color:#1a1a1a
+    style F2 fill:#c8e6c9,color:#1a1a1a
+    style F3 fill:#c8e6c9,color:#1a1a1a
+    style Sch fill:#fff9c4,color:#1a1a1a
+    style Reactor fill:#fff9c4,color:#1a1a1a
+    style K fill:#ffcdd2,color:#1a1a1a
 ```
 
 Tokio resolve quatro problemas ao mesmo tempo:
@@ -16431,8 +16431,8 @@ graph TB
     SAFE -->|"encapsula via API segura"| UNSAFE
     UNSAFE -->|"chama"| OS[Sistema Operacional / Hardware]
 
-    style SAFE fill:#c8e6c9,stroke:#1b5e20
-    style UNSAFE fill:#ffcdd2,stroke:#b71c1c
+    style SAFE fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style UNSAFE fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 C não tem essa estrutura. C é uma única camada, e essa camada é a camada de baixo. Toda função em C tem o mesmo poder destrutivo do `unsafe { }` de Rust — mas sem a marcação. Em C, você escreve `*p` e ninguém te avisa que aquilo, se `p` estiver dangling, é Undefined Behavior. Em Rust, `*p` em um raw pointer só compila dentro de um bloco `unsafe`, e a presença daquela palavra no código grita: *aqui o programador, e não o compilador, está garantindo a correção*.
@@ -16562,9 +16562,9 @@ graph LR
     C --> D[push retorna]
     D --> E[Estado válido<br/>do Vec]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style E fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Soundness é o contrato. Quando você publica um crate com API safe que internamente usa unsafe, você está declarando ao mundo: *passe o que passar pela minha API safe, eu garanto que UB não acontece*. Se acontecer — se alguém conseguir produzir UB sem escrever `unsafe` —, é um *soundness bug*, e em Rust isso é tratado como tratam vulnerabilidades de segurança.
@@ -16701,11 +16701,11 @@ graph TB
     D -->|"emerge como"| E["(&mut [T], &mut [T])"]
     E -->|"retorna para"| A
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#c8e6c9,stroke:#1b5e20
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Esse padrão — *descer ao unsafe, fazer a operação que o type system não modela, voltar com tipos seguros bem construídos* — é o modo de pensamento central de Rust de baixo nível. Ele aparece em `Vec`, em `HashMap`, em `Mutex`, em `Arc`, em todo iterator não-trivial, em todo allocator. Ele é o motivo pelo qual Rust consegue ser, simultaneamente, uma linguagem de aplicação e uma linguagem de sistemas.
@@ -16774,9 +16774,9 @@ graph TB
     D --> F
     E --> F
 
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#ffcdd2,stroke:#b71c1c
-    style F fill:#ffcdd2,stroke:#b71c1c
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style F fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Rust, por design, *abraçou* essa realidade. O FFI de Rust com C é tão limpo que crates como `libc`, `openssl-sys`, `pq-sys` permitem usar bibliotecas C diretamente em Rust com overhead exatamente zero — não há marshaling, não há cópia de buffer, não há bridge layer. Uma `extern "C" fn` em Rust gera o mesmo código de máquina que uma função em C. A única coisa que muda é que o compilador Rust te força a admitir que está atravessando a fronteira, via `unsafe`.
@@ -17099,9 +17099,9 @@ graph LR
     E --> F
     D -->|"link -lminha_lib"| F
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style D fill:#fff9c4,stroke:#f57f17
-    style E fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style E fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 37.8 Para Além de C: Python, Node, WASM
@@ -17171,11 +17171,11 @@ graph BT
     C -->|"unsafe extern"| D[biblioteca C]
     D -->|"system calls"| E[Kernel]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#fff9c4,stroke:#f57f17
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#ffcdd2,stroke:#b71c1c
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Esse modelo de camadas é o que torna possível a Mozilla escrever Servo (motor de browser) em Rust, a Cloudflare escrever Pingora (proxy HTTP) em Rust, a AWS escrever Firecracker (microVM) em Rust — todos consumindo bibliotecas C de baixo nível, sem replicar a história de buffer overflows que essas mesmas bibliotecas tiveram em C++.
@@ -17335,10 +17335,10 @@ graph TB
         Go["Go<br/>GC pode mover<br/>(escape analysis decide).<br/>Sem cgo, irrelevante."]
         Rust["Rust<br/>Move é default.<br/>Pin é a exceção opt-in<br/>quando importa."]
     end
-    style C fill:#ffcdd2
-    style Java fill:#fff9c4
-    style Go fill:#e1bee7
-    style Rust fill:#c8e6c9
+    style C fill:#ffcdd2,color:#1a1a1a
+    style Java fill:#fff9c4,color:#1a1a1a
+    style Go fill:#e1bee7,color:#1a1a1a
+    style Rust fill:#c8e6c9,color:#1a1a1a
 ```
 
 C jamais tem o problema de pin: ponteiros são endereços fixos. Java/JS resolvem por referência indireta (handles). Rust é a única que escolheu *mover por default* e teve que inventar um mecanismo separado para os casos em que isso quebra.
@@ -17663,8 +17663,8 @@ graph TB
 
     T1 -.->|nomes diferentes<br/>para o compilador| T2
 
-    style T1 fill:#c8e6c9,stroke:#1b5e20
-    style T2 fill:#bbdefb,stroke:#0d47a1
+    style T1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style T2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 O modelo formal de Rust chama-se **mixed-site hygiene**:
@@ -17859,9 +17859,9 @@ graph TB
         R4[Erros com spans corretos]
     end
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Resumindo a jornada deste capítulo:
@@ -17963,9 +17963,9 @@ graph TB
     B --> B1[Famosos: tokio::main, axum::handler]
     C --> C1[Famosos: sqlx::query!, html!]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#bbdefb,stroke:#0d47a1
-    style C fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada uma é declarada com um atributo diferente e tem uma assinatura de função diferente:
@@ -18282,8 +18282,8 @@ graph TB
     Decl -.->|teto baixo,<br/>chão seguro| Proc
     Proc -.->|poder total,<br/>responsabilidade total| Decl
 
-    style Decl fill:#c8e6c9,stroke:#1b5e20
-    style Proc fill:#fff9c4,stroke:#f57f17
+    style Decl fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Proc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 40.10 O Custo: Compilação
@@ -18383,12 +18383,12 @@ graph LR
     B -.->|hygiene<br/>tipos<br/>spans| GOOD1[Erros em compile-time]
     C -.->|extensibilidade<br/>integração com<br/>recursos externos| GOOD2[Frameworks completos]
 
-    style A fill:#ffcdd2,stroke:#b71c1c
-    style B fill:#fff9c4,stroke:#f57f17
-    style C fill:#c8e6c9,stroke:#1b5e20
-    style BAD fill:#ffcdd2
-    style GOOD1 fill:#c8e6c9
-    style GOOD2 fill:#c8e6c9
+    style A fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style B fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style C fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BAD fill:#ffcdd2,color:#1a1a1a
+    style GOOD1 fill:#c8e6c9,color:#1a1a1a
+    style GOOD2 fill:#c8e6c9,color:#1a1a1a
 ```
 
 Cinquenta anos de evolução de um conceito simples — *"como deixo o programador estender a sintaxe da linguagem?"* — foram pagos em vidas humanas (literalmente, no caso de bugs de C em sistemas críticos), em horas perdidas debugando expansões, em vulnerabilidades de segurança causadas por substituição textual mal feita. Rust, nessa área como em outras, é a primeira linguagem que oferece a meta-programação como um cidadão de primeira classe **sem cobrar o preço da insegurança**.
@@ -18480,9 +18480,9 @@ graph LR
     Domain --> Compiler
     Compiler -.zero-cost.-> Runtime
 
-    style Domain fill:#c8e6c9,stroke:#1b5e20
-    style Compiler fill:#bbdefb,stroke:#0d47a1
-    style Runtime fill:#fff9c4,stroke:#f57f17
+    style Domain fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Compiler fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Runtime fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ### 41.2.1 Newtype Como Modelagem de Domínio
@@ -19243,10 +19243,10 @@ graph LR
     Header -->|read_payload| Payload[Parser&lt;PayloadRead&gt;]
     Payload -->|validate_checksum| Done[Message]
 
-    style Start fill:#fff9c4,stroke:#f57f17
-    style Header fill:#bbdefb,stroke:#0d47a1
-    style Payload fill:#bbdefb,stroke:#0d47a1
-    style Done fill:#c8e6c9,stroke:#1b5e20
+    style Start fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Header fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Payload fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Done fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 42.6 Comparação: TS, Go, Java
@@ -19412,8 +19412,8 @@ graph TB
     Code --> Match["match err {<br/>RateLimit -> retry<br/>NotFound -> 404<br/>Database -> 500<br/>}"]
     Human --> Log["log estruturado:<br/>contexto, causa, stack"]
 
-    style Code fill:#bbdefb,stroke:#0d47a1
-    style Human fill:#fff9c4,stroke:#f57f17
+    style Code fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Human fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A primeira audiência é o **código**. Ele precisa ramificar: dado que aconteceu o erro X, o que deve acontecer? Retry? Fallback? Propagar? Para isso, o erro precisa de *estrutura*: um enum, uma classificação, campos identificáveis.
@@ -19577,10 +19577,10 @@ graph TB
     DB -.via ?.- App
     Auth -.via ?.- App
 
-    style App fill:#fff9c4,stroke:#f57f17
-    style Pay fill:#c8e6c9,stroke:#1b5e20
-    style DB fill:#bbdefb,stroke:#0d47a1
-    style Auth fill:#bbdefb,stroke:#0d47a1
+    style App fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Pay fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style DB fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Auth fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 ## 43.5 miette: Diagnóstico Para Humanos
@@ -19893,10 +19893,10 @@ graph LR
     App --> Log[tracing::error!]
     App --> User[saída terminal<br/>via miette]
 
-    style Lib1 fill:#bbdefb,stroke:#0d47a1
-    style Lib2 fill:#bbdefb,stroke:#0d47a1
-    style Service fill:#c8e6c9,stroke:#1b5e20
-    style App fill:#fff9c4,stroke:#f57f17
+    style Lib1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Lib2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Service fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style App fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada camada tem o tipo apropriado. Conversões acontecem nas bordas, com contexto. O topo da pilha é onde o erro vira log estruturado e/ou mensagem para o humano.
@@ -19976,8 +19976,8 @@ graph LR
     Trait --> Bincode[bincode]
     Trait --> MsgPack[rmp-serde]
 
-    style Trait fill:#c8e6c9,stroke:#1b5e20
-    style Struct fill:#bbdefb,stroke:#0d47a1
+    style Trait fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Struct fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 </content>
 ```
 
@@ -20479,8 +20479,8 @@ graph LR
     Pass -->|sim| Green[doc atualizada]
     Pass -->|não| Red[build falha]
 
-    style Green fill:#c8e6c9,stroke:#1b5e20
-    style Red fill:#ffcdd2,stroke:#b71c1c
+    style Green fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Red fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 45.5 Paralelismo Por Padrão
@@ -20986,7 +20986,7 @@ graph TB
     B -->|"serde features=[rc]"| Serde
     Serde[serde compilado UMA VEZ<br/>com derive E rc ativas]
 
-    style Serde fill:#fff9c4,stroke:#f57f17
+    style Serde fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Por que isso importa:
@@ -21191,8 +21191,8 @@ graph LR
     C --> D[LLVM optimizer<br/>loop unrolling, SIMD]
     D --> E[Assembly<br/>idêntico ao loop manual]
 
-    style A fill:#e1f5fe,stroke:#01579b
-    style E fill:#c8e6c9,stroke:#1b5e20
+    style A fill:#e1f5fe,stroke:#01579b,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Comparemos com **JavaScript**:
@@ -21505,8 +21505,8 @@ graph TB
     G --> I[Assembly = código manual]
     H --> J[~5-15% overhead]
 
-    style I fill:#c8e6c9,stroke:#1b5e20
-    style J fill:#fff9c4,stroke:#f57f17
+    style I fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style J fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A escolha é sua. O default é o caminho rápido.
@@ -21564,11 +21564,11 @@ graph LR
     D -->|piorou| F[Reverter]
     D -->|igual| G[Reverter<br/>complexidade sem ganho]
 
-    style A fill:#e1f5fe
-    style D fill:#e1f5fe
-    style E fill:#c8e6c9
-    style F fill:#ffcdd2
-    style G fill:#fff9c4
+    style A fill:#e1f5fe,color:#1a1a1a
+    style D fill:#e1f5fe,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#ffcdd2,color:#1a1a1a
+    style G fill:#fff9c4,color:#1a1a1a
 ```
 
 Pular qualquer um desses passos é caridade para futuros bugs. Otimizar sem medir é superstição. Medir sem profile é palpite. Profile sem mudança é teatro. Mudar sem medir de novo é negligência.
@@ -21786,8 +21786,8 @@ graph TB
     H -->|não| I[Reverter]
     I --> D
 
-    style C fill:#c8e6c9
-    style I fill:#ffcdd2
+    style C fill:#c8e6c9,color:#1a1a1a
+    style I fill:#ffcdd2,color:#1a1a1a
 ```
 
 ## 48.6 samply: Profiler Cross-Platform
@@ -22307,8 +22307,8 @@ graph TB
     CLI --> Cfg[(~/.config/tasky/config.toml)]
     CLI --> Log[tracing -> stderr]
 
-    style CLI fill:#c8e6c9,stroke:#1b5e20
-    style Store fill:#bbdefb,stroke:#0d47a1
+    style CLI fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Store fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Stack:
@@ -22480,8 +22480,8 @@ graph LR
     Lib[Módulos internos] -.usa.-> Thiserror["thiserror enum<br/>Erros tipados"]
     Anyhow -->|with_context| Thiserror
 
-    style Anyhow fill:#fff9c4,stroke:#f57f17
-    style Thiserror fill:#c8e6c9,stroke:#1b5e20
+    style Anyhow fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Thiserror fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `anyhow` é para o `main`: você não vai casar em variantes, só vai imprimir. `thiserror` é para bibliotecas: callers vão fazer `match` nos erros.
@@ -22979,9 +22979,9 @@ graph TB
         G4[Zero dependencies]
     end
 
-    style Rust fill:#c8e6c9,stroke:#1b5e20
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Node fill:#ffcdd2,stroke:#b71c1c
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Node fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Go e Rust empatam em UX de instalação e ambos atropelam Node. Onde Rust ganha de Go: **tamanho** (binário 7x menor) e **latência fria** (sem startup do runtime). Onde Go ganha de Rust: **tempo de compilação** (3x mais rápido em projetos médios).
@@ -23160,9 +23160,9 @@ graph TB
     Handler --> Resp["impl IntoResponse<br/>Json + StatusCode"]
     Resp -->|HTTP| Cli
 
-    style Handler fill:#c8e6c9,stroke:#1b5e20
-    style DB fill:#bbdefb,stroke:#0d47a1
-    style Tower fill:#fff9c4,stroke:#f57f17
+    style Handler fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style DB fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tower fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Toda essa pilha é **type-safe end-to-end**. O handler declara o que precisa via tipos de parâmetros (extractors), o Router conecta path a handler em compile time, e o response sai como `impl IntoResponse`. Se você esquecer `Json<Body>` num POST que precisa de body, o compilador grita.
@@ -23947,11 +23947,11 @@ graph TB
     Q1 -->|Performance extrema| Hyper[hyper raw<br/>Sem framework]
     Q1 -->|gRPC| Tonic[tonic<br/>Mesma família tower]
 
-    style Axum fill:#c8e6c9,stroke:#1b5e20
-    style Actix fill:#fff9c4,stroke:#f57f17
-    style Rocket fill:#fff9c4,stroke:#f57f17
-    style Hyper fill:#bbdefb,stroke:#0d47a1
-    style Tonic fill:#bbdefb,stroke:#0d47a1
+    style Axum fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Actix fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rocket fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Hyper fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tonic fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 - **Axum**: quase sempre. Time do Tokio, tower nativo, ergonomia em alta.
@@ -24206,12 +24206,12 @@ graph LR
     Fermyon["Fermyon Spin<br/>microserviços WASM<br/>cold start <1ms"]
     GoogleSheets["Google Sheets<br/>cálculos via WASM"]
 
-    style Figma fill:#fce4ec
-    style AdobePS fill:#fff9c4
-    style Discord fill:#c5e1a5
-    style Shopify fill:#b3e5fc
-    style Fermyon fill:#d1c4e9
-    style GoogleSheets fill:#ffe0b2
+    style Figma fill:#fce4ec,color:#1a1a1a
+    style AdobePS fill:#fff9c4,color:#1a1a1a
+    style Discord fill:#c5e1a5,color:#1a1a1a
+    style Shopify fill:#b3e5fc,color:#1a1a1a
+    style Fermyon fill:#d1c4e9,color:#1a1a1a
+    style GoogleSheets fill:#ffe0b2,color:#1a1a1a
 ```
 
 Não é hype: WASM já roda em produção em escala global. Rust é a linguagem que melhor se beneficia desse alvo.
@@ -24449,8 +24449,8 @@ graph LR
         R3 --> R4["impossível ignorar silenciosamente"]
     end
 
-    style TS fill:#fff9c4,stroke:#f57f17
-    style RS fill:#c8e6c9,stroke:#1b5e20
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Quando você escreve um endpoint em TypeScript, você envolve tudo em `try/catch` defensivo porque qualquer linha pode jogar. Em Rust, você **vê no tipo de retorno** se uma função pode falhar, e o compilador te força a tratar o caso.
@@ -24718,8 +24718,8 @@ graph TB
         R4 --> R5[Roda]
     end
 
-    style V8 fill:#fff9c4,stroke:#f57f17
-    style RS fill:#c8e6c9,stroke:#1b5e20
+    style V8 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Custos reais de TypeScript/Node:**
@@ -24894,8 +24894,8 @@ graph TB
         R4 --> R5["Cooperativo<br/>(.await é yield)"]
     end
 
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Stackful (Go)**: cada goroutine tem sua própria stack que cresce dinamicamente. Custa memória (mesmo que pouca). Permite chamar qualquer função sem cerimônia. O scheduler pode pre-emptar a goroutine em qualquer ponto.
@@ -25085,8 +25085,8 @@ graph LR
         R3 -.-> NO[Sem GC]
     end
 
-    style GC fill:#ffcdd2,stroke:#b71c1c
-    style NO fill:#c8e6c9,stroke:#1b5e20
+    style GC fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style NO fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Caso documentado: Discord (2020)**. O serviço *Read States* (qual mensagem você leu por última) era em Go. Discord publicou um post-mortem de migração pra Rust:
@@ -25197,16 +25197,16 @@ graph TB
     PROB -->|"WebAssembly perf"| RS5[Rust]
     PROB -->|"p99 < 10ms requisito"| RS6[Rust]
 
-    style GO1 fill:#bbdefb,stroke:#0d47a1
-    style GO2 fill:#bbdefb,stroke:#0d47a1
-    style GO3 fill:#bbdefb,stroke:#0d47a1
-    style GO4 fill:#bbdefb,stroke:#0d47a1
-    style RS1 fill:#c8e6c9,stroke:#1b5e20
-    style RS2 fill:#c8e6c9,stroke:#1b5e20
-    style RS3 fill:#c8e6c9,stroke:#1b5e20
-    style RS4 fill:#c8e6c9,stroke:#1b5e20
-    style RS5 fill:#c8e6c9,stroke:#1b5e20
-    style RS6 fill:#c8e6c9,stroke:#1b5e20
+    style GO1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO3 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO4 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style RS1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS3 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS4 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS5 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS6 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Go ganha em:**
@@ -25569,13 +25569,13 @@ graph TB
     Use --> G["Lib que serve várias langs<br/><i>via FFI ou WASM</i>"]
 
     style Use fill:#1a1a2e,stroke:#ce422b,color:#fff
-    style A fill:#c8e6c9
-    style B fill:#c8e6c9
-    style C fill:#c8e6c9
-    style D fill:#c8e6c9
-    style E fill:#c8e6c9
-    style F fill:#c8e6c9
-    style G fill:#c8e6c9
+    style A fill:#c8e6c9,color:#1a1a1a
+    style B fill:#c8e6c9,color:#1a1a1a
+    style C fill:#c8e6c9,color:#1a1a1a
+    style D fill:#c8e6c9,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#c8e6c9,color:#1a1a1a
+    style G fill:#c8e6c9,color:#1a1a1a
 ```
 
 E **não** use Rust quando:
@@ -25591,12 +25591,12 @@ graph TB
     Skip --> U["REPL-driven flow"]
 
     style Skip fill:#1a1a2e,stroke:#f44336,color:#fff
-    style P fill:#ffcdd2
-    style Q fill:#ffcdd2
-    style R fill:#ffcdd2
-    style S fill:#ffcdd2
-    style T fill:#ffcdd2
-    style U fill:#ffcdd2
+    style P fill:#ffcdd2,color:#1a1a1a
+    style Q fill:#ffcdd2,color:#1a1a1a
+    style R fill:#ffcdd2,color:#1a1a1a
+    style S fill:#ffcdd2,color:#1a1a1a
+    style T fill:#ffcdd2,color:#1a1a1a
+    style U fill:#ffcdd2,color:#1a1a1a
 ```
 
 ## 56.11 A Pergunta Honesta
@@ -25673,9 +25673,9 @@ graph TB
     Std --> Alloc
     Alloc --> Core
 
-    style Core fill:#c8e6c9,stroke:#1b5e20
-    style Alloc fill:#fff9c4,stroke:#f57f17
-    style Std fill:#ffcdd2,stroke:#b71c1c
+    style Core fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Alloc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Std fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 `core` é a fundação. Tipos primitivos, traits fundamentais (`Iterator`, `Clone`, `Copy`, `Debug`), `Option`, `Result`, slices, formatação. **Nada** que precise de heap. **Nada** que precise de sistema operacional. Você consegue rodar `core` num CPU sem RAM dinâmica e sem clock.
@@ -26094,10 +26094,10 @@ graph LR
     MIR --> LLVM
     LLVM --> OBJ
 
-    style Source fill:#e3f2fd
-    style AST fill:#bbdefb
-    style HIR fill:#90caf9
-    style THIR fill:#64b5f6
+    style Source fill:#e3f2fd,color:#1a1a1a
+    style AST fill:#bbdefb,color:#1a1a1a
+    style HIR fill:#90caf9,color:#1a1a1a
+    style THIR fill:#64b5f6,color:#ffffff
     style MIR fill:#42a5f5,color:#fff
     style LLVM fill:#1e88e5,color:#fff
     style OBJ fill:#0d47a1,color:#fff
@@ -26395,7 +26395,7 @@ graph LR
     C21[crate C: 2021] --> Bin
     C24[crate D: 2024] --> Bin
 
-    style Bin fill:#c8e6c9,stroke:#1b5e20
+    style Bin fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Compare com Python 2 → Python 3, que dividiu a comunidade por dez anos. Compare com Scala 2 → Scala 3, que está dividindo agora. Compare com Perl 5 → Perl 6, que matou Perl. Editions são a resposta de Rust ao problema mais antigo do design de linguagens: *como evoluir sem trair*.
@@ -26723,8 +26723,8 @@ graph TB
     Tentacao --> CodigoFeio[Código que compila mas mente]
     Pergunta --> Redesign[Redesign que respeita ownership]
 
-    style CodigoFeio fill:#ffcdd2,stroke:#b71c1c
-    style Redesign fill:#c8e6c9,stroke:#1b5e20
+    style CodigoFeio fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Redesign fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Vamos aos dez.
@@ -27295,8 +27295,8 @@ graph TB
     Tecnico --> CodigoQueQuemEsCreveuNaoEntendeMais[Código incompreensível em 6 meses]
     Aprendizado --> CodigoQueViveBemMuitoTempo[Código que vive bem por anos]
 
-    style Atalho fill:#ffcdd2,stroke:#b71c1c
-    style Investigacao fill:#c8e6c9,stroke:#1b5e20
+    style Atalho fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Investigacao fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Rust te força a pensar mais cedo do que outras linguagens. Outras linguagens deixam você adiar. Mas o tempo total de pensar é igual — Rust só cobra na hora certa, em compile time, em vez de em produção em uma quinta-feira às 16h.
@@ -27593,9 +27593,9 @@ graph TB
     Aberto --> ML[ML/AI]
     Aberto --> Web[Web frontend]
 
-    style Forte fill:#c8e6c9,stroke:#1b5e20
-    style Cresce fill:#fff9c4,stroke:#f57f17
-    style Aberto fill:#ffcdd2,stroke:#b71c1c
+    style Forte fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Cresce fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Aberto fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 62.6 Predições (com a humildade do caso)
@@ -27805,7 +27805,7 @@ graph TB
     Rust --> Carbon[Carbon: lessons from C++]
     Rust --> Future[Próxima linguagem: ?]
 
-    style Future fill:#fff9c4,stroke:#f57f17
+    style Future fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada uma dessas dependências aprende. Rust não está apenas substituindo C/C++ no nicho de sistemas. Está **melhorando o nível geral de design de linguagens**.

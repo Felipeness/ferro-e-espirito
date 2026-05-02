@@ -47,9 +47,9 @@ graph LR
     Caller -->|"&self"| Cache
     Cache -->|"borrow_mut em runtime"| Inner
 
-    style Caller fill:#bbdefb
-    style Cache fill:#fff9c4
-    style Inner fill:#c8e6c9
+    style Caller fill:#bbdefb,color:#1a1a1a
+    style Cache fill:#fff9c4,color:#1a1a1a
+    style Inner fill:#c8e6c9,color:#1a1a1a
 ```
 
 Por fora, o `Cache` parece imutável. Por dentro, ele muta. O contrato com o usuário não muda. A invariante de aliasing continua sendo respeitada — só que agora é o tipo que se responsabiliza, não o compilador.
@@ -386,11 +386,11 @@ graph TB
     Lock -->|"exclusivo"| Mutex["<b>Mutex T</b><br/>lock bloqueante<br/>cap 30"]
     Lock -->|"leitor-escritor"| RwLock["<b>RwLock T</b><br/>multi-leitor / unico-escritor<br/>cap 30"]
 
-    style Cell fill:#c8e6c9
-    style Refcell fill:#fff9c4
-    style Once fill:#bbdefb
-    style Mutex fill:#ffe0b2
-    style RwLock fill:#ffe0b2
+    style Cell fill:#c8e6c9,color:#1a1a1a
+    style Refcell fill:#fff9c4,color:#1a1a1a
+    style Once fill:#bbdefb,color:#1a1a1a
+    style Mutex fill:#ffe0b2,color:#1a1a1a
+    style RwLock fill:#ffe0b2,color:#1a1a1a
 ```
 
 A árvore inteira responde a perguntas:

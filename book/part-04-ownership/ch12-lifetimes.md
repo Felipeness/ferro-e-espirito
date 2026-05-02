@@ -159,9 +159,9 @@ graph TB
     R3 -->|sim| Out2[Output recebe<br/>lifetime de self]
     R3 -->|não| Erro[Compilador exige<br/>anotação explícita]
 
-    style Out1 fill:#c8e6c9,stroke:#1b5e20
-    style Out2 fill:#c8e6c9,stroke:#1b5e20
-    style Erro fill:#ffcdd2,stroke:#b71c1c
+    style Out1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Out2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Erro fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 **Regra 1.** Cada referência de input ganha seu próprio parâmetro de lifetime distinto:
@@ -232,10 +232,10 @@ graph TB
     Q --> Go["Go<br/>Escape analysis +<br/>GC para o que escapa."]
     Q --> Rust["Rust<br/>Compilador prova,<br/>antes do binário existir."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O mesmo bug, em quatro linguagens:

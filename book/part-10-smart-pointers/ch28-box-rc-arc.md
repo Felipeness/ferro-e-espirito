@@ -58,9 +58,9 @@ graph TB
     Share --> Rc["<b>Rc T</b><br/>N donos. Single-thread.<br/>Reference counted."]
     Thread --> Arc["<b>Arc T</b><br/>N donos. Multi-thread.<br/>Atomic refcount."]
 
-    style Box fill:#c8e6c9,stroke:#1b5e20
-    style Rc fill:#fff9c4,stroke:#f57f17
-    style Arc fill:#bbdefb,stroke:#0d47a1
+    style Box fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Arc fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Os três compartilham o mesmo princípio: **eles são donos**. Cada um implementa `Deref` para parecer uma referência e `Drop` para limpar quando ninguém mais precisa. A diferença é a regra de contagem.
@@ -325,10 +325,10 @@ graph LR
         R1["Box / Rc / Arc<br/>cada escolha<br/>e' explicita"]
     end
 
-    style C1 fill:#ffcdd2
-    style CPP1 fill:#fff9c4
-    style GC1 fill:#bbdefb
-    style R1 fill:#c8e6c9
+    style C1 fill:#ffcdd2,color:#1a1a1a
+    style CPP1 fill:#fff9c4,color:#1a1a1a
+    style GC1 fill:#bbdefb,color:#1a1a1a
+    style R1 fill:#c8e6c9,color:#1a1a1a
 ```
 
 **C** te dá `malloc`/`free`. Você é responsável por todo. Se você esquecer um `free`, leak. Se você der `free` duas vezes, double-free. Se você der `free` enquanto alguém ainda usa o ponteiro, use-after-free. Cada CVE de buffer overflow no Linux nasceu de um humano falhando essa contabilidade.

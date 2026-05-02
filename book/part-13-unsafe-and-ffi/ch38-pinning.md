@@ -141,10 +141,10 @@ graph TB
         Go["Go<br/>GC pode mover<br/>(escape analysis decide).<br/>Sem cgo, irrelevante."]
         Rust["Rust<br/>Move é default.<br/>Pin é a exceção opt-in<br/>quando importa."]
     end
-    style C fill:#ffcdd2
-    style Java fill:#fff9c4
-    style Go fill:#e1bee7
-    style Rust fill:#c8e6c9
+    style C fill:#ffcdd2,color:#1a1a1a
+    style Java fill:#fff9c4,color:#1a1a1a
+    style Go fill:#e1bee7,color:#1a1a1a
+    style Rust fill:#c8e6c9,color:#1a1a1a
 ```
 
 C jamais tem o problema de pin: ponteiros são endereços fixos. Java/JS resolvem por referência indireta (handles). Rust é a única que escolheu *mover por default* e teve que inventar um mecanismo separado para os casos em que isso quebra.

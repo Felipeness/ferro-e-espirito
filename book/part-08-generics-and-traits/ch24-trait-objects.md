@@ -353,8 +353,8 @@ graph TB
     Dynamic --> Pros2["Pros: heterogêneo, ABI estável, binário menor"]
     Dynamic --> Cons2["Cons: vtable, sem inline, object-safe only"]
 
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Dynamic fill:#fff9c4,stroke:#f57f17
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Dynamic fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 24.10 Resumo

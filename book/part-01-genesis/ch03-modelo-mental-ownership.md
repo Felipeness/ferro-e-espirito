@@ -35,9 +35,9 @@ graph TB
     WM2 --> R2["Segurança<br/>GC pause, footprint"]
     WM3 --> R3["Performance + segurança<br/>Curva mental"]
 
-    style WM1 fill:#ffcdd2,stroke:#b71c1c
-    style WM2 fill:#fff9c4,stroke:#f57f17
-    style WM3 fill:#c8e6c9,stroke:#1b5e20
+    style WM1 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style WM2 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style WM3 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ### World Model 1 — Você Gerencia (C, C++ raw, Assembly)
@@ -310,10 +310,10 @@ graph TB
     V --> Mv["Pode ser <b>movido</b><br/>(transfere ownership)"]
     V --> Cl["Pode ser <b>clonado</b><br/>(cópia explícita)"]
 
-    style O fill:#c8e6c9
-    style I fill:#bbdefb
-    style M fill:#ffe0b2
-    style S fill:#ffcdd2
+    style O fill:#c8e6c9,color:#1a1a1a
+    style I fill:#bbdefb,color:#1a1a1a
+    style M fill:#ffe0b2,color:#1a1a1a
+    style S fill:#ffcdd2,color:#1a1a1a
 ```
 
 Esse diagrama é o livro inteiro em uma imagem. Tudo que vem a seguir é detalhe.

@@ -196,8 +196,8 @@ graph LR
     C --> D["pub(crate)<br/>visível no crate"]
     D --> E["pub<br/>visível externamente<br/>(via path completo)"]
 
-    style A fill:#ffcdd2
-    style E fill:#c8e6c9
+    style A fill:#ffcdd2,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
 ```
 
 Lendo da esquerda para a direita: cada nível afrouxa a privacidade um pouco mais. Comece da esquerda e *só* afrouxe quando precisar.
@@ -355,8 +355,8 @@ graph TB
         P1 -.-> P2
     end
 
-    style R1 fill:#ffcdd2
-    style P1 fill:#c8e6c9
+    style R1 fill:#ffcdd2,color:#1a1a1a
+    style P1 fill:#c8e6c9,color:#1a1a1a
 ```
 
 O sistema de módulos de Rust *favorece* módulos profundos:

@@ -466,10 +466,10 @@ graph TB
 
     Expr --> ExprSafety[Garantias:<br/>- Sempre inicializada<br/>- Tipo único<br/>- Exaustividade verificada]
 
-    style Stmt fill:#ffcdd2,stroke:#b71c1c
-    style StmtBugs fill:#ffcdd2,stroke:#b71c1c
-    style Expr fill:#c8e6c9,stroke:#1b5e20
-    style ExprSafety fill:#c8e6c9,stroke:#1b5e20
+    style Stmt fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style StmtBugs fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Expr fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ExprSafety fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A diferença de paradigma se traduz em diferença de superfície de bugs.

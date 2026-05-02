@@ -27,10 +27,10 @@ graph LR
     MIR --> LLVM
     LLVM --> OBJ
 
-    style Source fill:#e3f2fd
-    style AST fill:#bbdefb
-    style HIR fill:#90caf9
-    style THIR fill:#64b5f6
+    style Source fill:#e3f2fd,color:#1a1a1a
+    style AST fill:#bbdefb,color:#1a1a1a
+    style HIR fill:#90caf9,color:#1a1a1a
+    style THIR fill:#64b5f6,color:#ffffff
     style MIR fill:#42a5f5,color:#fff
     style LLVM fill:#1e88e5,color:#fff
     style OBJ fill:#0d47a1,color:#fff

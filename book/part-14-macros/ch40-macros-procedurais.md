@@ -72,9 +72,9 @@ graph TB
     B --> B1[Famosos: tokio::main, axum::handler]
     C --> C1[Famosos: sqlx::query!, html!]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#bbdefb,stroke:#0d47a1
-    style C fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada uma é declarada com um atributo diferente e tem uma assinatura de função diferente:
@@ -391,8 +391,8 @@ graph TB
     Decl -.->|teto baixo,<br/>chão seguro| Proc
     Proc -.->|poder total,<br/>responsabilidade total| Decl
 
-    style Decl fill:#c8e6c9,stroke:#1b5e20
-    style Proc fill:#fff9c4,stroke:#f57f17
+    style Decl fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Proc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 40.10 O Custo: Compilação
@@ -492,12 +492,12 @@ graph LR
     B -.->|hygiene<br/>tipos<br/>spans| GOOD1[Erros em compile-time]
     C -.->|extensibilidade<br/>integração com<br/>recursos externos| GOOD2[Frameworks completos]
 
-    style A fill:#ffcdd2,stroke:#b71c1c
-    style B fill:#fff9c4,stroke:#f57f17
-    style C fill:#c8e6c9,stroke:#1b5e20
-    style BAD fill:#ffcdd2
-    style GOOD1 fill:#c8e6c9
-    style GOOD2 fill:#c8e6c9
+    style A fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style B fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style C fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BAD fill:#ffcdd2,color:#1a1a1a
+    style GOOD1 fill:#c8e6c9,color:#1a1a1a
+    style GOOD2 fill:#c8e6c9,color:#1a1a1a
 ```
 
 Cinquenta anos de evolução de um conceito simples — *"como deixo o programador estender a sintaxe da linguagem?"* — foram pagos em vidas humanas (literalmente, no caso de bugs de C em sistemas críticos), em horas perdidas debugando expansões, em vulnerabilidades de segurança causadas por substituição textual mal feita. Rust, nessa área como em outras, é a primeira linguagem que oferece a meta-programação como um cidadão de primeira classe **sem cobrar o preço da insegurança**.

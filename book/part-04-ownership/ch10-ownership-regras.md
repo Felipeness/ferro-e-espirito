@@ -95,8 +95,8 @@ graph TB
 
     S3 -- ptr --> H1
 
-    style Stack fill:#e3f2fd,stroke:#0d47a1
-    style Heap fill:#fff3e0,stroke:#e65100
+    style Stack fill:#e3f2fd,stroke:#0d47a1,color:#1a1a1a
+    style Heap fill:#fff3e0,stroke:#e65100,color:#1a1a1a
 ```
 
 A `String` é um **trio na stack** (ponteiro, comprimento, capacidade — 24 bytes em x86_64) que aponta para uma **região no heap** onde os bytes vivem.
@@ -131,9 +131,9 @@ graph LR
         D_s2["s2: ptr/6/6"] -->|aponta| D_heap["heap: Felipe"]
     end
 
-    style A_s1 fill:#c8e6c9,stroke:#1b5e20
-    style D_s1 fill:#ffcdd2,stroke:#b71c1c
-    style D_s2 fill:#c8e6c9,stroke:#1b5e20
+    style A_s1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D_s1 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style D_s2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O heap não mudou. Apenas o struct na stack migrou de variável. E o compilador agora se recusa a deixar você usar `s1`.
@@ -370,10 +370,10 @@ graph TB
     Bug --> GoHandling["Go / Java / TS<br/>GC resolve em runtime.<br/>Custo: pausa, overhead, sem sistemas."]
     Bug --> RustHandling["Rust<br/>Compilador prova ausência.<br/>Zero overhead. Sem GC."]
 
-    style CHandling fill:#ffcdd2,stroke:#b71c1c
-    style CppHandling fill:#fff9c4,stroke:#f57f17
-    style GoHandling fill:#fff9c4,stroke:#f57f17
-    style RustHandling fill:#c8e6c9,stroke:#1b5e20
+    style CHandling fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style CppHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style GoHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RustHandling fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 10.8 Visualizando um Move
@@ -400,7 +400,7 @@ graph LR
     end
     s1A -->|aponta| h
 
-    style s1A fill:#c8e6c9,stroke:#1b5e20
+    style s1A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A `String::from("Felipe")` chamou o alocador, recebeu o endereço `0xA0`, gravou os 6 bytes e construiu um header de 24 bytes na stack apontando para lá.
@@ -418,8 +418,8 @@ graph LR
     end
     s2B -->|aponta| h2
 
-    style s1B fill:#ffcdd2,stroke:#b71c1c
-    style s2B fill:#c8e6c9,stroke:#1b5e20
+    style s1B fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style s2B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `s1` ainda existe fisicamente na stack — os bytes do header podem até estar lá, idênticos. Mas, no nível do tipo, o compilador marcou `s1` como `moved`. Qualquer leitura de `s1` agora é erro de compilação. É um conceito puramente *estático*: nada acontece em runtime para "marcar" `s1`. O compilador simplesmente recusa o programa.
@@ -436,9 +436,9 @@ graph LR
         empty["0xA0: liberado"]
     end
 
-    style s1C fill:#ffcdd2,stroke:#b71c1c
-    style s2C fill:#ffcdd2,stroke:#b71c1c
-    style empty fill:#eceff1,stroke:#455a64
+    style s1C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style s2C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style empty fill:#eceff1,stroke:#455a64,color:#1a1a1a
 ```
 
 Note: `Drop` foi chamado *uma vez* — sobre `s2`. Nunca duas vezes. A Regra 2 ("um dono por vez") é exatamente o que torna isso seguro.
@@ -468,8 +468,8 @@ graph LR
     s1D --> h1d
     s2D --> h2d
 
-    style s1D fill:#c8e6c9,stroke:#1b5e20
-    style s2D fill:#c8e6c9,stroke:#1b5e20
+    style s1D fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style s2D fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `clone()` paga o preço: nova alocação, novo heap, dois donos genuinamente independentes. Cada um será dropped uma vez sobre seu próprio heap. Sem double-free, sem aliasing, sem problema.

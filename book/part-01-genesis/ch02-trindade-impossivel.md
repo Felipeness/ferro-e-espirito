@@ -31,10 +31,10 @@ graph TB
     M -.escolha 2.-> C
     C -.escolha 2.-> P
 
-    style P fill:#fff9c4,stroke:#f57f17
-    style M fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#bbdefb,stroke:#0d47a1
-    style Tri fill:#ffe0b2,stroke:#e65100
+    style P fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style M fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tri fill:#ffe0b2,stroke:#e65100,color:#1a1a1a
 ```
 
 A pergunta deste capítulo é simples: **por que isso era um trilema, e como Rust o destrói?**
@@ -242,9 +242,9 @@ graph LR
     D --> E[Bug em compile time]
     E --> F[Bug não pode existir]
 
-    style A fill:#ffcdd2
-    style E fill:#c8e6c9
-    style F fill:#a5d6a7
+    style A fill:#ffcdd2,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#a5d6a7,color:#1a1a1a
 ```
 
 C, Go, Python, JavaScript: a maior parte dos bugs vive entre A e D. Java e TypeScript empurraram um pedaço para E (null safety em TS, type errors em ambos). Rust empurra **classes inteiras** de bug — toda a família de UB de memória, toda a família de data races — para F.

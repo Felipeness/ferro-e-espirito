@@ -129,9 +129,9 @@ graph TB
     S1 -->|aponta para byte 0| H1
     S2 -->|aponta para byte 1| H1
 
-    style S1 fill:#fff9c4,stroke:#f57f17
-    style S2 fill:#bbdefb,stroke:#0d47a1
-    style H1 fill:#c8e6c9,stroke:#1b5e20
+    style S1 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style S2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style H1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `String` é uma estrutura na stack que aponta para bytes na heap. Carrega capacidade extra para crescer sem realocar a cada `push`. Quando o `String` sai de escopo, a memória da heap é liberada (Drop).
@@ -330,9 +330,9 @@ graph LR
     Chars --> Use2["use: validação,<br/>busca textual"]
     Graphemes --> Use3["use: cursor de UI,<br/>truncar texto"]
 
-    style Bytes fill:#ffcdd2,stroke:#b71c1c
-    style Chars fill:#fff9c4,stroke:#f57f17
-    style Graphemes fill:#c8e6c9,stroke:#1b5e20
+    style Bytes fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Chars fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Graphemes fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 7.8 Os Outros Tipos: CString, OsString, Path

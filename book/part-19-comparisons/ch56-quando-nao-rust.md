@@ -119,13 +119,13 @@ graph TB
     Use --> G["Lib que serve várias langs<br/><i>via FFI ou WASM</i>"]
 
     style Use fill:#1a1a2e,stroke:#ce422b,color:#fff
-    style A fill:#c8e6c9
-    style B fill:#c8e6c9
-    style C fill:#c8e6c9
-    style D fill:#c8e6c9
-    style E fill:#c8e6c9
-    style F fill:#c8e6c9
-    style G fill:#c8e6c9
+    style A fill:#c8e6c9,color:#1a1a1a
+    style B fill:#c8e6c9,color:#1a1a1a
+    style C fill:#c8e6c9,color:#1a1a1a
+    style D fill:#c8e6c9,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#c8e6c9,color:#1a1a1a
+    style G fill:#c8e6c9,color:#1a1a1a
 ```
 
 E **não** use Rust quando:
@@ -141,12 +141,12 @@ graph TB
     Skip --> U["REPL-driven flow"]
 
     style Skip fill:#1a1a2e,stroke:#f44336,color:#fff
-    style P fill:#ffcdd2
-    style Q fill:#ffcdd2
-    style R fill:#ffcdd2
-    style S fill:#ffcdd2
-    style T fill:#ffcdd2
-    style U fill:#ffcdd2
+    style P fill:#ffcdd2,color:#1a1a1a
+    style Q fill:#ffcdd2,color:#1a1a1a
+    style R fill:#ffcdd2,color:#1a1a1a
+    style S fill:#ffcdd2,color:#1a1a1a
+    style T fill:#ffcdd2,color:#1a1a1a
+    style U fill:#ffcdd2,color:#1a1a1a
 ```
 
 ## 56.11 A Pergunta Honesta

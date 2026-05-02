@@ -285,8 +285,8 @@ graph TB
     Q -- Binary / aplicação --> Sim["Sim, commit Cargo.lock<br/>Builds reprodutíveis em CI/prod."]
     Q -- Library --> Nao["Não, ignore Cargo.lock<br/>Deixe consumidores resolver."]
 
-    style Sim fill:#c8e6c9
-    style Nao fill:#fff9c4
+    style Sim fill:#c8e6c9,color:#1a1a1a
+    style Nao fill:#fff9c4,color:#1a1a1a
 ```
 
 A justificativa:
@@ -419,7 +419,7 @@ graph TB
     Cargo --> E["Ergonomia<br/>(mensagens, sugestões,<br/>cargo add)"]
     Cargo --> F["Ecossistema<br/>(crates.io + docs.rs<br/>=automático)"]
 
-    style Cargo fill:#c8e6c9,stroke:#1b5e20
+    style Cargo fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 1. **Padrões fortes**. Estrutura de projeto canônica (`src/`, `tests/`, `examples/`, `benches/`). Formatador único. Linter único. Versioning canônico. Você abre qualquer crate em crates.io e a topografia é familiar.

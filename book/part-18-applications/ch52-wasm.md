@@ -201,12 +201,12 @@ graph LR
     Fermyon["Fermyon Spin<br/>microserviços WASM<br/>cold start <1ms"]
     GoogleSheets["Google Sheets<br/>cálculos via WASM"]
 
-    style Figma fill:#fce4ec
-    style AdobePS fill:#fff9c4
-    style Discord fill:#c5e1a5
-    style Shopify fill:#b3e5fc
-    style Fermyon fill:#d1c4e9
-    style GoogleSheets fill:#ffe0b2
+    style Figma fill:#fce4ec,color:#1a1a1a
+    style AdobePS fill:#fff9c4,color:#1a1a1a
+    style Discord fill:#c5e1a5,color:#1a1a1a
+    style Shopify fill:#b3e5fc,color:#1a1a1a
+    style Fermyon fill:#d1c4e9,color:#1a1a1a
+    style GoogleSheets fill:#ffe0b2,color:#1a1a1a
 ```
 
 Não é hype: WASM já roda em produção em escala global. Rust é a linguagem que melhor se beneficia desse alvo.

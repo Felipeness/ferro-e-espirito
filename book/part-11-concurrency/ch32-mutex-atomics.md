@@ -125,7 +125,7 @@ graph TB
     ArcRole --> Together[Juntos: T mutavel,<br/>compartilhado entre threads]
     MutexRole --> Together
 
-    style Together fill:#c8e6c9,stroke:#1b5e20
+    style Together fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 32.4 Poisoning: O Result em lock()
@@ -437,10 +437,10 @@ graph TB
     Q --> Flow{O dado flui<br/>entre threads?}
     Flow -->|sim| Channel[mpsc / crossbeam<br/>cap. 31]
 
-    style Atomic fill:#c8e6c9,stroke:#1b5e20
-    style RwLock fill:#bbdefb,stroke:#0d47a1
-    style Mutex fill:#fff9c4,stroke:#f57f17
-    style Channel fill:#f8bbd0,stroke:#880e4f
+    style Atomic fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RwLock fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Mutex fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Channel fill:#f8bbd0,stroke:#880e4f,color:#1a1a1a
 ```
 
 Heurística:

@@ -26,8 +26,8 @@ graph LR
     Tipos -->|Bons| Compila["Só estados válidos compilam"]
     Tipos -->|Ruins| Runtime["Bugs em runtime"]
 
-    style Compila fill:#c8e6c9,stroke:#1b5e20
-    style Runtime fill:#ffcdd2,stroke:#b71c1c
+    style Compila fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Runtime fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Este capítulo é sobre as três variedades de `struct` em Rust, sobre métodos e funções associadas, e sobre o padrão que talvez seja a coisa mais subestimada da linguagem: o **newtype**.
@@ -193,10 +193,10 @@ graph TB
     Struct --> ImplB
     Struct --> ImplC
 
-    style Struct fill:#fff9c4,stroke:#f57f17
-    style ImplA fill:#c8e6c9,stroke:#1b5e20
-    style ImplB fill:#c8e6c9,stroke:#1b5e20
-    style ImplC fill:#c8e6c9,stroke:#1b5e20
+    style Struct fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style ImplA fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ImplB fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style ImplC fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 14.6 Funções Associadas
@@ -368,8 +368,8 @@ graph LR
     Domain -->|"sentido"| Código["Código auto-documentado"]
     Domain -->|"tipo nominal"| Compilador["Compilador refuta confusões"]
 
-    style Domain fill:#c8e6c9,stroke:#1b5e20
-    style Compilador fill:#c8e6c9,stroke:#1b5e20
+    style Domain fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Compilador fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 14.9 Modelando um Pedido

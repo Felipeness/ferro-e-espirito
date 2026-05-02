@@ -42,10 +42,10 @@ graph LR
     Src --> str["id_String(x: String) -&gt; String"]
     Src --> vec["id_Vec_u8(x: Vec&lt;u8&gt;) -&gt; Vec&lt;u8&gt;"]
 
-    style Src fill:#bbdefb,stroke:#0d47a1
-    style i32 fill:#c8e6c9,stroke:#1b5e20
-    style str fill:#c8e6c9,stroke:#1b5e20
-    style vec fill:#c8e6c9,stroke:#1b5e20
+    style Src fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style i32 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style str fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style vec fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O custo é binário maior — cada tipo concreto multiplica o código gerado. O ganho é que o compilador pode otimizar cada especialização individualmente: inline, vetorização, eliminação de branches mortos.

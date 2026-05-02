@@ -200,11 +200,11 @@ graph TB
     M -->|Local, escopo limitado| LetMut[let mut nome]
     M -->|Global| Warning["static mut<br/><b>unsafe</b><br/>repense"]
 
-    style Const fill:#c8e6c9,stroke:#1b5e20
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Let fill:#c8e6c9,stroke:#1b5e20
-    style LetMut fill:#fff9c4,stroke:#f57f17
-    style Warning fill:#ffcdd2,stroke:#b71c1c
+    style Const fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Let fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style LetMut fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Warning fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 4.6 Shadowing — A Reencarnação do Nome

@@ -53,9 +53,9 @@ graph TB
     Handler --> Resp["impl IntoResponse<br/>Json + StatusCode"]
     Resp -->|HTTP| Cli
 
-    style Handler fill:#c8e6c9,stroke:#1b5e20
-    style DB fill:#bbdefb,stroke:#0d47a1
-    style Tower fill:#fff9c4,stroke:#f57f17
+    style Handler fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style DB fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tower fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Toda essa pilha é **type-safe end-to-end**. O handler declara o que precisa via tipos de parâmetros (extractors), o Router conecta path a handler em compile time, e o response sai como `impl IntoResponse`. Se você esquecer `Json<Body>` num POST que precisa de body, o compilador grita.
@@ -840,11 +840,11 @@ graph TB
     Q1 -->|Performance extrema| Hyper[hyper raw<br/>Sem framework]
     Q1 -->|gRPC| Tonic[tonic<br/>Mesma família tower]
 
-    style Axum fill:#c8e6c9,stroke:#1b5e20
-    style Actix fill:#fff9c4,stroke:#f57f17
-    style Rocket fill:#fff9c4,stroke:#f57f17
-    style Hyper fill:#bbdefb,stroke:#0d47a1
-    style Tonic fill:#bbdefb,stroke:#0d47a1
+    style Axum fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Actix fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rocket fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Hyper fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Tonic fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 - **Axum**: quase sempre. Time do Tokio, tower nativo, ergonomia em alta.

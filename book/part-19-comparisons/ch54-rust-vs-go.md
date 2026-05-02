@@ -117,8 +117,8 @@ graph TB
         R4 --> R5["Cooperativo<br/>(.await é yield)"]
     end
 
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Stackful (Go)**: cada goroutine tem sua própria stack que cresce dinamicamente. Custa memória (mesmo que pouca). Permite chamar qualquer função sem cerimônia. O scheduler pode pre-emptar a goroutine em qualquer ponto.
@@ -308,8 +308,8 @@ graph LR
         R3 -.-> NO[Sem GC]
     end
 
-    style GC fill:#ffcdd2,stroke:#b71c1c
-    style NO fill:#c8e6c9,stroke:#1b5e20
+    style GC fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style NO fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Caso documentado: Discord (2020)**. O serviço *Read States* (qual mensagem você leu por última) era em Go. Discord publicou um post-mortem de migração pra Rust:
@@ -420,16 +420,16 @@ graph TB
     PROB -->|"WebAssembly perf"| RS5[Rust]
     PROB -->|"p99 < 10ms requisito"| RS6[Rust]
 
-    style GO1 fill:#bbdefb,stroke:#0d47a1
-    style GO2 fill:#bbdefb,stroke:#0d47a1
-    style GO3 fill:#bbdefb,stroke:#0d47a1
-    style GO4 fill:#bbdefb,stroke:#0d47a1
-    style RS1 fill:#c8e6c9,stroke:#1b5e20
-    style RS2 fill:#c8e6c9,stroke:#1b5e20
-    style RS3 fill:#c8e6c9,stroke:#1b5e20
-    style RS4 fill:#c8e6c9,stroke:#1b5e20
-    style RS5 fill:#c8e6c9,stroke:#1b5e20
-    style RS6 fill:#c8e6c9,stroke:#1b5e20
+    style GO1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO3 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style GO4 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style RS1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS2 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS3 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS4 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS5 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style RS6 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Go ganha em:**

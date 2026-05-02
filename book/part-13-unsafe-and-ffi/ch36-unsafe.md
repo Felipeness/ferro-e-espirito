@@ -35,8 +35,8 @@ graph TB
     SAFE -->|"encapsula via API segura"| UNSAFE
     UNSAFE -->|"chama"| OS[Sistema Operacional / Hardware]
 
-    style SAFE fill:#c8e6c9,stroke:#1b5e20
-    style UNSAFE fill:#ffcdd2,stroke:#b71c1c
+    style SAFE fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style UNSAFE fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 C não tem essa estrutura. C é uma única camada, e essa camada é a camada de baixo. Toda função em C tem o mesmo poder destrutivo do `unsafe { }` de Rust — mas sem a marcação. Em C, você escreve `*p` e ninguém te avisa que aquilo, se `p` estiver dangling, é Undefined Behavior. Em Rust, `*p` em um raw pointer só compila dentro de um bloco `unsafe`, e a presença daquela palavra no código grita: *aqui o programador, e não o compilador, está garantindo a correção*.
@@ -166,9 +166,9 @@ graph LR
     C --> D[push retorna]
     D --> E[Estado válido<br/>do Vec]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style E fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Soundness é o contrato. Quando você publica um crate com API safe que internamente usa unsafe, você está declarando ao mundo: *passe o que passar pela minha API safe, eu garanto que UB não acontece*. Se acontecer — se alguém conseguir produzir UB sem escrever `unsafe` —, é um *soundness bug*, e em Rust isso é tratado como tratam vulnerabilidades de segurança.
@@ -305,11 +305,11 @@ graph TB
     D -->|"emerge como"| E["(&mut [T], &mut [T])"]
     E -->|"retorna para"| A
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#c8e6c9,stroke:#1b5e20
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Esse padrão — *descer ao unsafe, fazer a operação que o type system não modela, voltar com tipos seguros bem construídos* — é o modo de pensamento central de Rust de baixo nível. Ele aparece em `Vec`, em `HashMap`, em `Mutex`, em `Arc`, em todo iterator não-trivial, em todo allocator. Ele é o motivo pelo qual Rust consegue ser, simultaneamente, uma linguagem de aplicação e uma linguagem de sistemas.

@@ -52,9 +52,9 @@ graph TB
     Static -->|é subtipo de| Long
     Long -->|é subtipo de| Short
 
-    style Static fill:#c8e6c9,stroke:#1b5e20
-    style Long fill:#fff9c4,stroke:#f57f17
-    style Short fill:#ffcdd2,stroke:#b71c1c
+    style Static fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Long fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Short fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 A direção da seta — *"é subtipo de"* — vai do **mais longo** para o **mais curto**. O compilador faz **coerção implícita** descendo essa hierarquia: ele pode encurtar lifetimes silenciosamente. Nunca alongar.

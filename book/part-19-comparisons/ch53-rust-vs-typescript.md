@@ -199,8 +199,8 @@ graph LR
         R3 --> R4["impossível ignorar silenciosamente"]
     end
 
-    style TS fill:#fff9c4,stroke:#f57f17
-    style RS fill:#c8e6c9,stroke:#1b5e20
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Quando você escreve um endpoint em TypeScript, você envolve tudo em `try/catch` defensivo porque qualquer linha pode jogar. Em Rust, você **vê no tipo de retorno** se uma função pode falhar, e o compilador te força a tratar o caso.
@@ -468,8 +468,8 @@ graph TB
         R4 --> R5[Roda]
     end
 
-    style V8 fill:#fff9c4,stroke:#f57f17
-    style RS fill:#c8e6c9,stroke:#1b5e20
+    style V8 fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 **Custos reais de TypeScript/Node:**

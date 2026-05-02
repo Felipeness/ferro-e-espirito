@@ -143,7 +143,7 @@ graph LR
     C21[crate C: 2021] --> Bin
     C24[crate D: 2024] --> Bin
 
-    style Bin fill:#c8e6c9,stroke:#1b5e20
+    style Bin fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Compare com Python 2 → Python 3, que dividiu a comunidade por dez anos. Compare com Scala 2 → Scala 3, que está dividindo agora. Compare com Perl 5 → Perl 6, que matou Perl. Editions são a resposta de Rust ao problema mais antigo do design de linguagens: *como evoluir sem trair*.

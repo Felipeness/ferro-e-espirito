@@ -80,10 +80,10 @@ graph TB
     Q --> TS["TypeScript Workers<br/><b>Sem memoria compartilhada.</b><br/>Sem race, sem paralelismo direto."]
     Q --> Rust["Rust threads<br/><b>Nao compila.</b><br/>Send/Sync recusam."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 30.2 thread::spawn e JoinHandle
@@ -222,10 +222,10 @@ graph TB
     All --> SyncOnly[Sync mas nao Send<br/>raro: MutexGuard]
     All --> Neither[Nem Send nem Sync<br/>ex: Rc, *mut T]
 
-    style SendSync fill:#c8e6c9,stroke:#1b5e20
-    style SendOnly fill:#fff9c4,stroke:#f57f17
-    style SyncOnly fill:#fff9c4,stroke:#f57f17
-    style Neither fill:#ffcdd2,stroke:#b71c1c
+    style SendSync fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style SendOnly fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style SyncOnly fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Neither fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 30.5 Por Que Rc Não É Send
@@ -564,8 +564,8 @@ graph LR
     SS -->|sim| Compila[Binario seguro]
     SS -->|nao| Erro[Erro nomeado<br/>com tipo culpado]
 
-    style Compila fill:#c8e6c9,stroke:#1b5e20
-    style Erro fill:#ffcdd2,stroke:#b71c1c
+    style Compila fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Erro fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 No próximo capítulo, vamos ao primeiro mecanismo de comunicação que Rust empresta de Go: **channels**.

@@ -24,11 +24,11 @@ graph LR
     D -->|piorou| F[Reverter]
     D -->|igual| G[Reverter<br/>complexidade sem ganho]
 
-    style A fill:#e1f5fe
-    style D fill:#e1f5fe
-    style E fill:#c8e6c9
-    style F fill:#ffcdd2
-    style G fill:#fff9c4
+    style A fill:#e1f5fe,color:#1a1a1a
+    style D fill:#e1f5fe,color:#1a1a1a
+    style E fill:#c8e6c9,color:#1a1a1a
+    style F fill:#ffcdd2,color:#1a1a1a
+    style G fill:#fff9c4,color:#1a1a1a
 ```
 
 Pular qualquer um desses passos é caridade para futuros bugs. Otimizar sem medir é superstição. Medir sem profile é palpite. Profile sem mudança é teatro. Mudar sem medir de novo é negligência.
@@ -246,8 +246,8 @@ graph TB
     H -->|não| I[Reverter]
     I --> D
 
-    style C fill:#c8e6c9
-    style I fill:#ffcdd2
+    style C fill:#c8e6c9,color:#1a1a1a
+    style I fill:#ffcdd2,color:#1a1a1a
 ```
 
 ## 48.6 samply: Profiler Cross-Platform

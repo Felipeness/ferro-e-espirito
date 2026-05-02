@@ -68,8 +68,8 @@ graph TB
     Lib --> Mod2[mod b]
     Mod2 --> Mod2a[mod c]
 
-    style Lib fill:#c8e6c9,stroke:#1b5e20
-    style Bin1 fill:#bbdefb,stroke:#0d47a1
+    style Lib fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Bin1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Compare com Go. Em Go, a unidade equivalente seria o *package*, e a unidade de "tudo junto" é o *module* (Go module, com `go.mod`). Mas Go não distingue lib de bin no nível do package: o package vira binário se tiver `package main` e `func main()`, senão é importável. Funciona, mas é menos explícito.

@@ -28,10 +28,10 @@ graph TB
     Q --> Go["Go<br/><b>Conversão explícita</b><br/>int32(x), mas sem<br/>distinção infalível/falível."]
     Q --> Rust["Rust<br/><b>Inferência local +<br/>From / TryFrom</b><br/>Sem coerção. Sem surpresa."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#e1bee7,stroke:#4a148c
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#e1bee7,stroke:#4a148c,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Este capítulo é sobre essa quarta caixa.
@@ -406,9 +406,9 @@ flowchart TD
     E --> G[Compilador prova<br/>safety estática]
     F --> G
 
-    style C fill:#c8e6c9,stroke:#1b5e20
-    style D fill:#fff9c4,stroke:#f57f17
-    style G fill:#bbdefb,stroke:#0d47a1
+    style C fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style G fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Esse padrão se repete em:

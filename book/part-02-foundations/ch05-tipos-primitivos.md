@@ -274,10 +274,10 @@ graph LR
     Char --> Rust["Rust char<br/>4 bytes<br/>USV (sem surrogates)"]
     Char --> TS["TS string[i]<br/>2 bytes UTF-16<br/>pode ser meio caractere"]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#c8e6c9,stroke:#1b5e20
-    style Rust fill:#c8e6c9,stroke:#1b5e20
-    style TS fill:#fff9c4,stroke:#f57f17
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Há uma sutileza importante: `char` em Rust é **um USV**, não necessariamente um *grapheme cluster* (o que o usuário vê como "uma letra"). O `é` pode ser um único USV (`U+00E9`) ou dois (`e` + acento combinante `U+0301`). Para iterar grapheme clusters, use o crate `unicode-segmentation`. Para 95% dos casos, `char` é o que você quer.
@@ -415,9 +415,9 @@ graph LR
     Array -->|&array[..]| Slice
     Vec -->|&vec[..]| Slice
 
-    style Array fill:#c8e6c9,stroke:#1b5e20
-    style Slice fill:#bbdefb,stroke:#0d47a1
-    style Vec fill:#fff9c4,stroke:#f57f17
+    style Array fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Slice fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Vec fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A maioria das funções de biblioteca aceita `&[T]` (slice) em vez de array fixo ou `Vec`, porque slice é o denominador comum. Você passa qualquer um dos três:

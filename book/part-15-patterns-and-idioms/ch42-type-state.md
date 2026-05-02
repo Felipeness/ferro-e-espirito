@@ -291,10 +291,10 @@ graph LR
     Header -->|read_payload| Payload[Parser&lt;PayloadRead&gt;]
     Payload -->|validate_checksum| Done[Message]
 
-    style Start fill:#fff9c4,stroke:#f57f17
-    style Header fill:#bbdefb,stroke:#0d47a1
-    style Payload fill:#bbdefb,stroke:#0d47a1
-    style Done fill:#c8e6c9,stroke:#1b5e20
+    style Start fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Header fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Payload fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Done fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 42.6 Comparação: TS, Go, Java

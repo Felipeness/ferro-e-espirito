@@ -183,8 +183,8 @@ graph TB
     Match -->|Ok&#40;v&#41;| Unwrap --> Continue
     Match -->|Err&#40;e&#41;| Convert --> Return
 
-    style Continue fill:#c8e6c9,stroke:#1b5e20
-    style Return fill:#ffcdd2,stroke:#b71c1c
+    style Continue fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Return fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 `?` também funciona com `Option`, propagando `None` da mesma forma. Não funciona em funções que retornam `()` — você precisa de uma função que retorna `Result` ou `Option`. `main` pode retornar `Result<(), Box<dyn Error>>` desde Rust 2018, então `?` no `main` é viável:
@@ -379,10 +379,10 @@ graph TB
         R3["compilador exige tratamento"]
     end
 
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Quatro propriedades convergem em Rust e em mais nenhuma das três:

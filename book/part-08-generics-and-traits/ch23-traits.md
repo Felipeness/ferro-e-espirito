@@ -255,10 +255,10 @@ graph LR
     TS    --> Java
     Java  --> Rust
 
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Java fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Java fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Da esquerda pra direita: mais flexível à mais seguro. Go e TS te deixam implementar interfaces sem saber que existem (o compilador deduz). Java te força a declarar. Rust te força a declarar *e* aplica a orphan rule.

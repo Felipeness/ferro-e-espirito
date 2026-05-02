@@ -27,8 +27,8 @@ graph TB
     Tentacao --> CodigoFeio[Código que compila mas mente]
     Pergunta --> Redesign[Redesign que respeita ownership]
 
-    style CodigoFeio fill:#ffcdd2,stroke:#b71c1c
-    style Redesign fill:#c8e6c9,stroke:#1b5e20
+    style CodigoFeio fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Redesign fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Vamos aos dez.
@@ -599,8 +599,8 @@ graph TB
     Tecnico --> CodigoQueQuemEsCreveuNaoEntendeMais[Código incompreensível em 6 meses]
     Aprendizado --> CodigoQueViveBemMuitoTempo[Código que vive bem por anos]
 
-    style Atalho fill:#ffcdd2,stroke:#b71c1c
-    style Investigacao fill:#c8e6c9,stroke:#1b5e20
+    style Atalho fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Investigacao fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Rust te força a pensar mais cedo do que outras linguagens. Outras linguagens deixam você adiar. Mas o tempo total de pensar é igual — Rust só cobra na hora certa, em compile time, em vez de em produção em uma quinta-feira às 16h.

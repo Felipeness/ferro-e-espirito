@@ -21,9 +21,9 @@ graph TB
     Q --> Go["Go<br/><b>Goroutines + scheduler</b><br/>Stackful, runtime gerencia<br/>~2KB por goroutine"]
     Q --> Rust["Rust<br/><b>Future + executor externo</b><br/>Stackless, zero-cost<br/>LAZY até polled"]
 
-    style JS fill:#fff9c4,stroke:#f57f17
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style JS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 JavaScript escolheu o caminho mais simples: **uma thread**, um event loop, callbacks empilhados em filas. A linguagem nasceu no navegador, onde a UI exige uma única thread por construção. Promises são **eager** — quando você escreve `fetch(url)`, a requisição **dispara imediatamente**, mesmo que ninguém faça `.then` nela.
@@ -193,12 +193,12 @@ graph LR
         F3 -.- Exec
     end
 
-    style G1 fill:#bbdefb
-    style G2 fill:#bbdefb
-    style G3 fill:#bbdefb
-    style F1 fill:#c8e6c9
-    style F2 fill:#c8e6c9
-    style F3 fill:#c8e6c9
+    style G1 fill:#bbdefb,color:#1a1a1a
+    style G2 fill:#bbdefb,color:#1a1a1a
+    style G3 fill:#bbdefb,color:#1a1a1a
+    style F1 fill:#c8e6c9,color:#1a1a1a
+    style F2 fill:#c8e6c9,color:#1a1a1a
+    style F3 fill:#c8e6c9,color:#1a1a1a
 ```
 
 **Stackful coroutines** (Go, Erlang, fibers C++): cada tarefa concorrente tem sua própria stack de execução. Quando ela faz uma operação que bloqueia, o runtime salva a stack inteira e troca para outra. É flexível — a tarefa pode chamar funções normais, recursão, qualquer coisa — mas tem custo de memória e de troca de contexto.

@@ -77,8 +77,8 @@ graph TB
     CLI --> Cfg[(~/.config/tasky/config.toml)]
     CLI --> Log[tracing -> stderr]
 
-    style CLI fill:#c8e6c9,stroke:#1b5e20
-    style Store fill:#bbdefb,stroke:#0d47a1
+    style CLI fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Store fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Stack:
@@ -250,8 +250,8 @@ graph LR
     Lib[Módulos internos] -.usa.-> Thiserror["thiserror enum<br/>Erros tipados"]
     Anyhow -->|with_context| Thiserror
 
-    style Anyhow fill:#fff9c4,stroke:#f57f17
-    style Thiserror fill:#c8e6c9,stroke:#1b5e20
+    style Anyhow fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Thiserror fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 `anyhow` é para o `main`: você não vai casar em variantes, só vai imprimir. `thiserror` é para bibliotecas: callers vão fazer `match` nos erros.
@@ -749,9 +749,9 @@ graph TB
         G4[Zero dependencies]
     end
 
-    style Rust fill:#c8e6c9,stroke:#1b5e20
-    style Go fill:#bbdefb,stroke:#0d47a1
-    style Node fill:#ffcdd2,stroke:#b71c1c
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Go fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Node fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Go e Rust empatam em UX de instalação e ambos atropelam Node. Onde Rust ganha de Go: **tamanho** (binário 7x menor) e **latência fria** (sem startup do runtime). Onde Go ganha de Rust: **tempo de compilação** (3x mais rápido em projetos médios).

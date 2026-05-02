@@ -22,8 +22,8 @@ graph TB
     Code --> Match["match err {<br/>RateLimit -> retry<br/>NotFound -> 404<br/>Database -> 500<br/>}"]
     Human --> Log["log estruturado:<br/>contexto, causa, stack"]
 
-    style Code fill:#bbdefb,stroke:#0d47a1
-    style Human fill:#fff9c4,stroke:#f57f17
+    style Code fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Human fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A primeira audiência é o **código**. Ele precisa ramificar: dado que aconteceu o erro X, o que deve acontecer? Retry? Fallback? Propagar? Para isso, o erro precisa de *estrutura*: um enum, uma classificação, campos identificáveis.
@@ -187,10 +187,10 @@ graph TB
     DB -.via ?.- App
     Auth -.via ?.- App
 
-    style App fill:#fff9c4,stroke:#f57f17
-    style Pay fill:#c8e6c9,stroke:#1b5e20
-    style DB fill:#bbdefb,stroke:#0d47a1
-    style Auth fill:#bbdefb,stroke:#0d47a1
+    style App fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Pay fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style DB fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Auth fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 ## 43.5 miette: Diagnóstico Para Humanos
@@ -503,10 +503,10 @@ graph LR
     App --> Log[tracing::error!]
     App --> User[saída terminal<br/>via miette]
 
-    style Lib1 fill:#bbdefb,stroke:#0d47a1
-    style Lib2 fill:#bbdefb,stroke:#0d47a1
-    style Service fill:#c8e6c9,stroke:#1b5e20
-    style App fill:#fff9c4,stroke:#f57f17
+    style Lib1 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Lib2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Service fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style App fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada camada tem o tipo apropriado. Conversões acontecem nas bordas, com contexto. O topo da pilha é onde o erro vira log estruturado e/ou mensagem para o humano.

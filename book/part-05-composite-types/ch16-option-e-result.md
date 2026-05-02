@@ -77,10 +77,10 @@ graph LR
     Função -->|"TS strict"| TS["T | null<br/>compilador checa"]
     Função -->|"Rust"| Rust["Option<T><br/>tipo é a checagem"]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Go fill:#fff9c4,stroke:#f57f17
-    style TS fill:#c8e6c9,stroke:#1b5e20
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 16.3 Métodos do Option
@@ -353,10 +353,10 @@ graph TB
     Caminho -->|"TS"| TMod["try/catch<br/>tipo do erro: any/unknown<br/>fluxo invisível"]
     Caminho -->|"Rust"| RMod["operador ?<br/>1 caractere por chamada<br/>tipo do erro explícito"]
 
-    style RMod fill:#c8e6c9,stroke:#1b5e20
-    style GMod fill:#fff9c4,stroke:#f57f17
-    style TMod fill:#fff9c4,stroke:#f57f17
-    style CMod fill:#ffcdd2,stroke:#b71c1c
+    style RMod fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style GMod fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TMod fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style CMod fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 16.6 Antes e Depois: Parsing nas Quatro Linguagens

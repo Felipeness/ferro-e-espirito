@@ -61,8 +61,8 @@ graph LR
     nome --> h
     s --> nome
 
-    style nome fill:#c8e6c9,stroke:#1b5e20
-    style s fill:#bbdefb,stroke:#0d47a1
+    style nome fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style s fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 Note a diferença em relação a um move: `s` não é uma cópia do header de `nome`. `s` é um ponteiro **para o header de `nome`**. Quando `comprimento` retorna, `s` desaparece, mas `nome` está intacta — não foi tocada.
@@ -213,8 +213,8 @@ graph TB
         p2 --> h2_old
     end
 
-    style p2 fill:#ffcdd2,stroke:#b71c1c
-    style h2_old fill:#ffcdd2,stroke:#b71c1c
+    style p2 fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style h2_old fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Em C++, este é o bug clássico que `std::vector::push_back` causa. Iteradores guardados antes de `push_back` podem ser invalidados — está documentado, mas é um erro humano comum. Em Rust, o compilador rejeita o programa: você tem um `&` vivo, não pode chamar nada que peça `&mut self` no mesmo `Vec`.
@@ -588,10 +588,10 @@ graph TB
     Bug --> TSHandling["TS / Go<br/>Comportamento errado, sem erro.<br/>Detecção: bug report."]
     Bug --> RustHandling["Rust<br/>Erro de compilação.<br/>Detecção: antes do binário."]
 
-    style CHandling fill:#ffcdd2,stroke:#b71c1c
-    style JavaHandling fill:#fff9c4,stroke:#f57f17
-    style TSHandling fill:#fff9c4,stroke:#f57f17
-    style RustHandling fill:#c8e6c9,stroke:#1b5e20
+    style CHandling fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style JavaHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style TSHandling fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style RustHandling fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 11.12 Por Que `aliasing XOR mutability` é Mais Profundo do Que Parece
@@ -707,7 +707,7 @@ graph TB
     GG6 --> Final
     GG7 --> Final
 
-    style Final fill:#c8e6c9,stroke:#1b5e20
+    style Final fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Sete bugs históricos eliminados:

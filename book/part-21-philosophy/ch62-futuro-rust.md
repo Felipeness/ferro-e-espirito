@@ -255,9 +255,9 @@ graph TB
     Aberto --> ML[ML/AI]
     Aberto --> Web[Web frontend]
 
-    style Forte fill:#c8e6c9,stroke:#1b5e20
-    style Cresce fill:#fff9c4,stroke:#f57f17
-    style Aberto fill:#ffcdd2,stroke:#b71c1c
+    style Forte fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Cresce fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Aberto fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 62.6 Predições (com a humildade do caso)
@@ -467,7 +467,7 @@ graph TB
     Rust --> Carbon[Carbon: lessons from C++]
     Rust --> Future[Próxima linguagem: ?]
 
-    style Future fill:#fff9c4,stroke:#f57f17
+    style Future fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Cada uma dessas dependências aprende. Rust não está apenas substituindo C/C++ no nicho de sistemas. Está **melhorando o nível geral de design de linguagens**.

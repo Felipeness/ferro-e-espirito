@@ -293,8 +293,8 @@ graph TB
 
     T1 -.->|nomes diferentes<br/>para o compilador| T2
 
-    style T1 fill:#c8e6c9,stroke:#1b5e20
-    style T2 fill:#bbdefb,stroke:#0d47a1
+    style T1 fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style T2 fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 O modelo formal de Rust chama-se **mixed-site hygiene**:
@@ -489,9 +489,9 @@ graph TB
         R4[Erros com spans corretos]
     end
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style TS fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style TS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Resumindo a jornada deste capítulo:

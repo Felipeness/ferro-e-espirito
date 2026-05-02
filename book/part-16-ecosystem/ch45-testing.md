@@ -160,8 +160,8 @@ graph LR
     Pass -->|sim| Green[doc atualizada]
     Pass -->|não| Red[build falha]
 
-    style Green fill:#c8e6c9,stroke:#1b5e20
-    style Red fill:#ffcdd2,stroke:#b71c1c
+    style Green fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Red fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 ## 45.5 Paralelismo Por Padrão

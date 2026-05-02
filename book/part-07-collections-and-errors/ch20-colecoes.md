@@ -41,8 +41,8 @@ graph LR
     Heap["Heap<br/>[1, 2, 3, _]"]
     Stack -->|aponta| Heap
 
-    style Stack fill:#fff9c4,stroke:#f57f17
-    style Heap fill:#c8e6c9,stroke:#1b5e20
+    style Stack fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Heap fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Em TypeScript:
@@ -399,12 +399,12 @@ graph TB
     Set --> BTS["<b>BTreeSet&lt;T&gt;</b><br/>ordenado"]
     Fila --> VD["<b>VecDeque&lt;T&gt;</b><br/>ring buffer"]
 
-    style Vec fill:#c8e6c9,stroke:#1b5e20
-    style HM fill:#c8e6c9,stroke:#1b5e20
-    style BTM fill:#fff9c4,stroke:#f57f17
-    style HS fill:#c8e6c9,stroke:#1b5e20
-    style BTS fill:#fff9c4,stroke:#f57f17
-    style VD fill:#c8e6c9,stroke:#1b5e20
+    style Vec fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style HM fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BTM fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style HS fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style BTS fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style VD fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A heurística é simples e raramente erra:

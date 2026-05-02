@@ -321,7 +321,7 @@ graph TB
     B -->|"serde features=[rc]"| Serde
     Serde[serde compilado UMA VEZ<br/>com derive E rc ativas]
 
-    style Serde fill:#fff9c4,stroke:#f57f17
+    style Serde fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Por que isso importa:

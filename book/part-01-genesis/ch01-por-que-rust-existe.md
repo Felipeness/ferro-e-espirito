@@ -68,9 +68,9 @@ graph TB
     Q --> Java["Java/C#/Go/JS<br/><b>O runtime</b>.<br/>Pague o GC."]
     Q --> Rust["Rust<br/><b>O compilador sabe</b>.<br/>Sem runtime, sem bug."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 C diz: "você é dono, faça o que quiser, free quando quiser, e que Deus tenha piedade da sua alma".

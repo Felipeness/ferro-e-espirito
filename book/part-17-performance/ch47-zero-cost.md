@@ -108,8 +108,8 @@ graph LR
     C --> D[LLVM optimizer<br/>loop unrolling, SIMD]
     D --> E[Assembly<br/>idêntico ao loop manual]
 
-    style A fill:#e1f5fe,stroke:#01579b
-    style E fill:#c8e6c9,stroke:#1b5e20
+    style A fill:#e1f5fe,stroke:#01579b,color:#1a1a1a
+    style E fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 Comparemos com **JavaScript**:
@@ -422,8 +422,8 @@ graph TB
     G --> I[Assembly = código manual]
     H --> J[~5-15% overhead]
 
-    style I fill:#c8e6c9,stroke:#1b5e20
-    style J fill:#fff9c4,stroke:#f57f17
+    style I fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style J fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 A escolha é sua. O default é o caminho rápido.

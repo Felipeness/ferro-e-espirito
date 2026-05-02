@@ -71,8 +71,8 @@ graph TB
 
     Modelo --> Garantia["Estados ilegais não compilam"]
 
-    style Modelo fill:#fff9c4,stroke:#f57f17
-    style Garantia fill:#c8e6c9,stroke:#1b5e20
+    style Modelo fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Garantia fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A descoberta importante: linguagens com sum types decentes (Rust, Haskell, OCaml, F#, Scala, TypeScript com discriminated unions, Swift) ganham uma ferramenta que linguagens sem (Go, Java até 17, C) não têm. E essa ferramenta é o que permite seguir o conselho de Minsky.

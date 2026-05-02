@@ -48,9 +48,9 @@ graph TB
     Std --> Alloc
     Alloc --> Core
 
-    style Core fill:#c8e6c9,stroke:#1b5e20
-    style Alloc fill:#fff9c4,stroke:#f57f17
-    style Std fill:#ffcdd2,stroke:#b71c1c
+    style Core fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Alloc fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Std fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 `core` é a fundação. Tipos primitivos, traits fundamentais (`Iterator`, `Clone`, `Copy`, `Debug`), `Option`, `Result`, slices, formatação. **Nada** que precise de heap. **Nada** que precise de sistema operacional. Você consegue rodar `core` num CPU sem RAM dinâmica e sem clock.

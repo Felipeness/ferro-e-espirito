@@ -58,9 +58,9 @@ graph LR
     Domain --> Compiler
     Compiler -.zero-cost.-> Runtime
 
-    style Domain fill:#c8e6c9,stroke:#1b5e20
-    style Compiler fill:#bbdefb,stroke:#0d47a1
-    style Runtime fill:#fff9c4,stroke:#f57f17
+    style Domain fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Compiler fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Runtime fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ### 41.2.1 Newtype Como Modelagem de Domínio

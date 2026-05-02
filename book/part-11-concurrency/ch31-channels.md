@@ -24,7 +24,7 @@ graph LR
     C[Producer N] -->|send| Ch
     Ch -->|recv| D[Consumer]
 
-    style Ch fill:#c8e6c9,stroke:#1b5e20
+    style Ch fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ## 31.2 mpsc: Multi-Producer, Single-Consumer
@@ -448,8 +448,8 @@ graph LR
     W2 --> Sink
     W3 --> Sink
 
-    style Source fill:#bbdefb,stroke:#0d47a1
-    style Sink fill:#c8e6c9,stroke:#1b5e20
+    style Source fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Sink fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 ```rust
@@ -610,9 +610,9 @@ graph LR
     Choice -->|threads, producao| Cross
     Choice -->|async/await| Tok
 
-    style Std fill:#fff9c4,stroke:#f57f17
-    style Cross fill:#c8e6c9,stroke:#1b5e20
-    style Tok fill:#bbdefb,stroke:#0d47a1
+    style Std fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Cross fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Tok fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 ---

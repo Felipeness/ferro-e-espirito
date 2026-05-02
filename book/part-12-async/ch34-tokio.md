@@ -43,12 +43,12 @@ graph TB
     Reactor <-.events.- K
     Block <-.syscalls.- K
 
-    style F1 fill:#c8e6c9
-    style F2 fill:#c8e6c9
-    style F3 fill:#c8e6c9
-    style Sch fill:#fff9c4
-    style Reactor fill:#fff9c4
-    style K fill:#ffcdd2
+    style F1 fill:#c8e6c9,color:#1a1a1a
+    style F2 fill:#c8e6c9,color:#1a1a1a
+    style F3 fill:#c8e6c9,color:#1a1a1a
+    style Sch fill:#fff9c4,color:#1a1a1a
+    style Reactor fill:#fff9c4,color:#1a1a1a
+    style K fill:#ffcdd2,color:#1a1a1a
 ```
 
 Tokio resolve quatro problemas ao mesmo tempo:

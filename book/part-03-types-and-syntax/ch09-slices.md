@@ -53,8 +53,8 @@ graph LR
     P --> D1
     L -.-> D3
 
-    style Slice fill:#c8e6c9,stroke:#1b5e20
-    style Heap fill:#bbdefb,stroke:#0d47a1
+    style Slice fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Heap fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 ```
 
 A representação canônica:

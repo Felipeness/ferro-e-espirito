@@ -64,8 +64,8 @@ graph LR
 
     antes ==> depois
 
-    style S1B fill:#ffcdd2,stroke:#b71c1c
-    style S2B fill:#c8e6c9,stroke:#1b5e20
+    style S1B fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style S2B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 A diferença essencial em relação a C é: **Rust marca `s1` como inválido em compile time**. Tentar usá-lo é erro do compilador, não bug em runtime. Quando `s2` sair de escopo, ele será o único a chamar `drop`. O heap será liberado uma vez. Sem double-free, sem leak.
@@ -185,11 +185,11 @@ graph TB
     Q --> Go["Go<br/>Cópia rasa do value.<br/>Pointers compartilham heap.<br/>GC limpa."]
     Q --> Rust["Rust<br/>Move se !Copy.<br/>Copy se Copy.<br/>a invalidado no primeiro caso."]
 
-    style C fill:#ffcdd2,stroke:#b71c1c
-    style CPP fill:#fff3e0,stroke:#e65100
-    style Java fill:#fff9c4,stroke:#f57f17
-    style Go fill:#fff9c4,stroke:#f57f17
-    style Rust fill:#c8e6c9,stroke:#1b5e20
+    style C fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style CPP fill:#fff3e0,stroke:#e65100,color:#1a1a1a
+    style Java fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Go fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style Rust fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
 ```
 
 O mesmo código, cinco realidades:
@@ -302,10 +302,10 @@ graph TB
     Q3 -->|não| Borrow["Emprestar<br/>let b = &a;"]
     Q3 -->|sim| Clone["Clonar<br/>let b = a.clone();"]
 
-    style Move fill:#c8e6c9,stroke:#1b5e20
-    style Copy fill:#c8e6c9,stroke:#1b5e20
-    style Borrow fill:#bbdefb,stroke:#0d47a1
-    style Clone fill:#fff9c4,stroke:#f57f17
+    style Move fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Copy fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Borrow fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
+    style Clone fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 Em ordem de preferência decrescente:

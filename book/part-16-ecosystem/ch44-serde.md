@@ -65,8 +65,8 @@ graph LR
     Trait --> Bincode[bincode]
     Trait --> MsgPack[rmp-serde]
 
-    style Trait fill:#c8e6c9,stroke:#1b5e20
-    style Struct fill:#bbdefb,stroke:#0d47a1
+    style Trait fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style Struct fill:#bbdefb,stroke:#0d47a1,color:#1a1a1a
 </content>
 ```
 

@@ -42,9 +42,9 @@ graph TB
     D --> F
     E --> F
 
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#ffcdd2,stroke:#b71c1c
-    style F fill:#ffcdd2,stroke:#b71c1c
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style F fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Rust, por design, *abraçou* essa realidade. O FFI de Rust com C é tão limpo que crates como `libc`, `openssl-sys`, `pq-sys` permitem usar bibliotecas C diretamente em Rust com overhead exatamente zero — não há marshaling, não há cópia de buffer, não há bridge layer. Uma `extern "C" fn` em Rust gera o mesmo código de máquina que uma função em C. A única coisa que muda é que o compilador Rust te força a admitir que está atravessando a fronteira, via `unsafe`.
@@ -367,9 +367,9 @@ graph LR
     E --> F
     D -->|"link -lminha_lib"| F
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style D fill:#fff9c4,stroke:#f57f17
-    style E fill:#fff9c4,stroke:#f57f17
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style D fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style E fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
 ```
 
 ## 37.8 Para Além de C: Python, Node, WASM
@@ -439,11 +439,11 @@ graph BT
     C -->|"unsafe extern"| D[biblioteca C]
     D -->|"system calls"| E[Kernel]
 
-    style A fill:#c8e6c9,stroke:#1b5e20
-    style B fill:#c8e6c9,stroke:#1b5e20
-    style C fill:#fff9c4,stroke:#f57f17
-    style D fill:#ffcdd2,stroke:#b71c1c
-    style E fill:#ffcdd2,stroke:#b71c1c
+    style A fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style B fill:#c8e6c9,stroke:#1b5e20,color:#1a1a1a
+    style C fill:#fff9c4,stroke:#f57f17,color:#1a1a1a
+    style D fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
+    style E fill:#ffcdd2,stroke:#b71c1c,color:#1a1a1a
 ```
 
 Esse modelo de camadas é o que torna possível a Mozilla escrever Servo (motor de browser) em Rust, a Cloudflare escrever Pingora (proxy HTTP) em Rust, a AWS escrever Firecracker (microVM) em Rust — todos consumindo bibliotecas C de baixo nível, sem replicar a história de buffer overflows que essas mesmas bibliotecas tiveram em C++.
